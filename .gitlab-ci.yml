@@ -1,0 +1,10 @@
+variables:
+  PACKAGE_NAME: Io.Nodeum.Sdk
+
+include:
+  - local: .gitlab/ci/generate.gitlab-ci.yml
+
+stages:
+  - build
+  - test
+  - publish
