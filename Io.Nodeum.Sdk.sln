@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Io.Nodeum.Sdk", "src\Io.Nodeum.Sdk\Io.Nodeum.Sdk.csproj", "{26821276-5F40-4E37-829C-DF1051572F8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Io.Nodeum.Sdk", "src\Io.Nodeum.Sdk\Io.Nodeum.Sdk.csproj", "{99CC491D-6BD5-44F9-B106-4F119FECA016}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Io.Nodeum.Sdk.Test", "src\Io.Nodeum.Sdk.Test\Io.Nodeum.Sdk.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26821276-5F40-4E37-829C-DF1051572F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26821276-5F40-4E37-829C-DF1051572F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26821276-5F40-4E37-829C-DF1051572F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26821276-5F40-4E37-829C-DF1051572F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99CC491D-6BD5-44F9-B106-4F119FECA016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99CC491D-6BD5-44F9-B106-4F119FECA016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99CC491D-6BD5-44F9-B106-4F119FECA016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99CC491D-6BD5-44F9-B106-4F119FECA016}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

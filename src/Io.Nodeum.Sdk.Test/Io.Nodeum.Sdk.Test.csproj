@@ -24,7 +24,7 @@ Contact: info@nodeum.io
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Io.Nodeum.Sdk\Io.Nodeum.Sdk.csproj">
-      <Project>{26821276-5F40-4E37-829C-DF1051572F8C}</Project>
+      <Project>{99CC491D-6BD5-44F9-B106-4F119FECA016}</Project>
       <Name>Io.Nodeum.Sdk</Name>
     </ProjectReference>
   </ItemGroup>
