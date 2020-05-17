@@ -35,7 +35,9 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="ByDateFacet" /> class.
         /// </summary>
         /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
+        /// <param name="cost">cost.</param>
         /// <param name="inCache">inCache.</param>
         /// <param name="less1Week">less1Week.</param>
         /// <param name="less1Month">less1Month.</param>
@@ -44,10 +46,12 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="less1Year">less1Year.</param>
         /// <param name="less2Years">less2Years.</param>
         /// <param name="more2Years">more2Years.</param>
-        public ByDateFacet(int count = default(int), int fileSizeSum = default(int), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet))
+        public ByDateFacet(int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet))
         {
             this.Count = count;
+            this.FilesCount = filesCount;
             this.FileSizeSum = fileSizeSum;
+            this.Cost = cost;
             this.InCache = inCache;
             this.Less1Week = less1Week;
             this.Less1Month = less1Month;
@@ -65,10 +69,22 @@ namespace Io.Nodeum.Sdk.Model
         public int Count { get; set; }
 
         /// <summary>
+        /// Gets or Sets FilesCount
+        /// </summary>
+        [DataMember(Name="files_count", EmitDefaultValue=false)]
+        public int FilesCount { get; set; }
+
+        /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
         public int FileSizeSum { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cost
+        /// </summary>
+        [DataMember(Name="cost", EmitDefaultValue=false)]
+        public decimal Cost { get; set; }
 
         /// <summary>
         /// Gets or Sets InCache
@@ -127,7 +143,9 @@ namespace Io.Nodeum.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class ByDateFacet {\n");
             sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  FilesCount: ").Append(FilesCount).Append("\n");
             sb.Append("  FileSizeSum: ").Append(FileSizeSum).Append("\n");
+            sb.Append("  Cost: ").Append(Cost).Append("\n");
             sb.Append("  InCache: ").Append(InCache).Append("\n");
             sb.Append("  Less1Week: ").Append(Less1Week).Append("\n");
             sb.Append("  Less1Month: ").Append(Less1Month).Append("\n");
@@ -175,8 +193,16 @@ namespace Io.Nodeum.Sdk.Model
                     this.Count.Equals(input.Count)
                 ) && 
                 (
+                    this.FilesCount == input.FilesCount ||
+                    this.FilesCount.Equals(input.FilesCount)
+                ) && 
+                (
                     this.FileSizeSum == input.FileSizeSum ||
                     this.FileSizeSum.Equals(input.FileSizeSum)
+                ) && 
+                (
+                    this.Cost == input.Cost ||
+                    this.Cost.Equals(input.Cost)
                 ) && 
                 (
                     this.InCache == input.InCache ||
@@ -230,7 +256,9 @@ namespace Io.Nodeum.Sdk.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.Count.GetHashCode();
+                hashCode = hashCode * 59 + this.FilesCount.GetHashCode();
                 hashCode = hashCode * 59 + this.FileSizeSum.GetHashCode();
+                hashCode = hashCode * 59 + this.Cost.GetHashCode();
                 if (this.InCache != null)
                     hashCode = hashCode * 59 + this.InCache.GetHashCode();
                 if (this.Less1Week != null)

@@ -29,30 +29,39 @@ namespace Io.Nodeum.Sdk.Model
     /// FileFacet
     /// </summary>
     [DataContract]
-    public partial class FileFacet :  IEquatable<FileFacet>, IValidatableObject
+    public partial class FileFacet : DefaultFacet,  IEquatable<FileFacet>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FileFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
-        public FileFacet(int count = default(int), int fileSizeSum = default(int))
+        /// <param name="cost">cost.</param>
+        /// <param name="count">count.</param>
+        public FileFacet(int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), int count = default(int)) : base()
         {
-            this.Count = count;
+            this.FilesCount = filesCount;
             this.FileSizeSum = fileSizeSum;
+            this.Cost = cost;
         }
         
         /// <summary>
-        /// Gets or Sets Count
+        /// Gets or Sets FilesCount
         /// </summary>
-        [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        [DataMember(Name="files_count", EmitDefaultValue=false)]
+        public int FilesCount { get; set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
         public int FileSizeSum { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cost
+        /// </summary>
+        [DataMember(Name="cost", EmitDefaultValue=false)]
+        public decimal Cost { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,8 +71,10 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FileFacet {\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
+            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
+            sb.Append("  FilesCount: ").Append(FilesCount).Append("\n");
             sb.Append("  FileSizeSum: ").Append(FileSizeSum).Append("\n");
+            sb.Append("  Cost: ").Append(Cost).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -72,7 +83,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -97,14 +108,18 @@ namespace Io.Nodeum.Sdk.Model
             if (input == null)
                 return false;
 
-            return 
+            return base.Equals(input) && 
                 (
-                    this.Count == input.Count ||
-                    this.Count.Equals(input.Count)
-                ) && 
+                    this.FilesCount == input.FilesCount ||
+                    this.FilesCount.Equals(input.FilesCount)
+                ) && base.Equals(input) && 
                 (
                     this.FileSizeSum == input.FileSizeSum ||
                     this.FileSizeSum.Equals(input.FileSizeSum)
+                ) && base.Equals(input) && 
+                (
+                    this.Cost == input.Cost ||
+                    this.Cost.Equals(input.Cost)
                 );
         }
 
@@ -116,9 +131,10 @@ namespace Io.Nodeum.Sdk.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                hashCode = hashCode * 59 + this.Count.GetHashCode();
+                int hashCode = base.GetHashCode();
+                hashCode = hashCode * 59 + this.FilesCount.GetHashCode();
                 hashCode = hashCode * 59 + this.FileSizeSum.GetHashCode();
+                hashCode = hashCode * 59 + this.Cost.GetHashCode();
                 return hashCode;
             }
         }
@@ -130,6 +146,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            foreach(var x in BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

@@ -116,6 +116,12 @@ namespace Io.Nodeum.Sdk.Model
         public int StatTotalFiles { get; private set; }
 
         /// <summary>
+        /// Gets or Sets OnlyOnCacheFileCount
+        /// </summary>
+        [DataMember(Name="only_on_cache_file_count", EmitDefaultValue=false)]
+        public int OnlyOnCacheFileCount { get; private set; }
+
+        /// <summary>
         /// Gets or Sets StatTotalSize
         /// </summary>
         [DataMember(Name="stat_total_size", EmitDefaultValue=false)]
@@ -126,6 +132,12 @@ namespace Io.Nodeum.Sdk.Model
         /// </summary>
         [DataMember(Name="stat_size_on_cache", EmitDefaultValue=false)]
         public int StatSizeOnCache { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets OnlyOnCacheFileSizeSum
+        /// </summary>
+        [DataMember(Name="only_on_cache_file_size_sum", EmitDefaultValue=false)]
+        public int OnlyOnCacheFileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets LastUpdate
@@ -147,8 +159,10 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  QuotaTotalSize: ").Append(QuotaTotalSize).Append("\n");
             sb.Append("  QuotaOnCache: ").Append(QuotaOnCache).Append("\n");
             sb.Append("  StatTotalFiles: ").Append(StatTotalFiles).Append("\n");
+            sb.Append("  OnlyOnCacheFileCount: ").Append(OnlyOnCacheFileCount).Append("\n");
             sb.Append("  StatTotalSize: ").Append(StatTotalSize).Append("\n");
             sb.Append("  StatSizeOnCache: ").Append(StatSizeOnCache).Append("\n");
+            sb.Append("  OnlyOnCacheFileSizeSum: ").Append(OnlyOnCacheFileSizeSum).Append("\n");
             sb.Append("  GuestRight: ").Append(GuestRight).Append("\n");
             sb.Append("  LastUpdate: ").Append(LastUpdate).Append("\n");
             sb.Append("}\n");
@@ -212,12 +226,20 @@ namespace Io.Nodeum.Sdk.Model
                     this.StatTotalFiles.Equals(input.StatTotalFiles)
                 ) && 
                 (
+                    this.OnlyOnCacheFileCount == input.OnlyOnCacheFileCount ||
+                    this.OnlyOnCacheFileCount.Equals(input.OnlyOnCacheFileCount)
+                ) && 
+                (
                     this.StatTotalSize == input.StatTotalSize ||
                     this.StatTotalSize.Equals(input.StatTotalSize)
                 ) && 
                 (
                     this.StatSizeOnCache == input.StatSizeOnCache ||
                     this.StatSizeOnCache.Equals(input.StatSizeOnCache)
+                ) && 
+                (
+                    this.OnlyOnCacheFileSizeSum == input.OnlyOnCacheFileSizeSum ||
+                    this.OnlyOnCacheFileSizeSum.Equals(input.OnlyOnCacheFileSizeSum)
                 ) && 
                 (
                     this.GuestRight == input.GuestRight ||
@@ -247,8 +269,10 @@ namespace Io.Nodeum.Sdk.Model
                 hashCode = hashCode * 59 + this.QuotaTotalSize.GetHashCode();
                 hashCode = hashCode * 59 + this.QuotaOnCache.GetHashCode();
                 hashCode = hashCode * 59 + this.StatTotalFiles.GetHashCode();
+                hashCode = hashCode * 59 + this.OnlyOnCacheFileCount.GetHashCode();
                 hashCode = hashCode * 59 + this.StatTotalSize.GetHashCode();
                 hashCode = hashCode * 59 + this.StatSizeOnCache.GetHashCode();
+                hashCode = hashCode * 59 + this.OnlyOnCacheFileSizeSum.GetHashCode();
                 hashCode = hashCode * 59 + this.GuestRight.GetHashCode();
                 if (this.LastUpdate != null)
                     hashCode = hashCode * 59 + this.LastUpdate.GetHashCode();

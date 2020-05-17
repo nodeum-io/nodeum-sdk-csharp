@@ -34,19 +34,21 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByPrimaryFacet" /> class.
         /// </summary>
-        /// <param name="primaryName">primaryName.</param>
+        /// <param name="primNameS">primNameS.</param>
         /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
-        public ByPrimaryFacet(ByDateFacetBuckets primaryName = default(ByDateFacetBuckets), int count = default(int), int fileSizeSum = default(int)) : base()
+        /// <param name="cost">cost.</param>
+        public ByPrimaryFacet(ByDateFacetBuckets primNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
         {
-            this.PrimaryName = primaryName;
+            this.PrimNameS = primNameS;
         }
         
         /// <summary>
-        /// Gets or Sets PrimaryName
+        /// Gets or Sets PrimNameS
         /// </summary>
-        [DataMember(Name="primary_name", EmitDefaultValue=false)]
-        public ByDateFacetBuckets PrimaryName { get; set; }
+        [DataMember(Name="prim_name_s", EmitDefaultValue=false)]
+        public ByDateFacetBuckets PrimNameS { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,7 +59,7 @@ namespace Io.Nodeum.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class ByPrimaryFacet {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  PrimaryName: ").Append(PrimaryName).Append("\n");
+            sb.Append("  PrimNameS: ").Append(PrimNameS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,9 +95,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return base.Equals(input) && 
                 (
-                    this.PrimaryName == input.PrimaryName ||
-                    (this.PrimaryName != null &&
-                    this.PrimaryName.Equals(input.PrimaryName))
+                    this.PrimNameS == input.PrimNameS ||
+                    (this.PrimNameS != null &&
+                    this.PrimNameS.Equals(input.PrimNameS))
                 );
         }
 
@@ -108,8 +110,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.PrimaryName != null)
-                    hashCode = hashCode * 59 + this.PrimaryName.GetHashCode();
+                if (this.PrimNameS != null)
+                    hashCode = hashCode * 59 + this.PrimNameS.GetHashCode();
                 return hashCode;
             }
         }

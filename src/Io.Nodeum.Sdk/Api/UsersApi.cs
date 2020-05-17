@@ -49,6 +49,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <returns>ApiResponse of ApiKeyFull</returns>
         ApiResponse<ApiKeyFull> CreateApiKeyWithHttpInfo (ApiKeyFull apiKeyBody);
         /// <summary>
+        /// Creates a new configuration value for current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / create
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>UserConfiguration</returns>
+        UserConfiguration CreateConfiguration (UserConfiguration configurationBody);
+
+        /// <summary>
+        /// Creates a new configuration value for current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / create
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        ApiResponse<UserConfiguration> CreateConfigurationWithHttpInfo (UserConfiguration configurationBody);
+        /// <summary>
         /// Destroys a specific API Key.
         /// </summary>
         /// <remarks>
@@ -69,6 +90,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="apiKeyId">Numeric ID of API Key.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DestroyApiKeyWithHttpInfo (int apiKeyId);
+        /// <summary>
+        /// Destroys a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns></returns>
+        void DestroyConfiguration (string configurationId);
+
+        /// <summary>
+        /// Destroys a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DestroyConfigurationWithHttpInfo (string configurationId);
         /// <summary>
         /// Lists all API keys of current user.
         /// </summary>
@@ -92,6 +134,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="offset">The number of items to skip for pagination. (optional)</param>
         /// <returns>ApiResponse of ApiKeyCollection</returns>
         ApiResponse<ApiKeyCollection> IndexApiKeysWithHttpInfo (int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Lists all configurations of current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / index
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>UserConfigurationCollection</returns>
+        UserConfigurationCollection IndexConfigurations (int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Lists all configurations of current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / index
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>ApiResponse of UserConfigurationCollection</returns>
+        ApiResponse<UserConfigurationCollection> IndexConfigurationsWithHttpInfo (int? limit = default(int?), int? offset = default(int?));
         /// <summary>
         /// List all system groups.
         /// </summary>
@@ -152,6 +217,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <returns>ApiResponse of ApiKeyFull</returns>
         ApiResponse<ApiKeyFull> ShowApiKeyWithHttpInfo (int apiKeyId);
         /// <summary>
+        /// Displays a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / show
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>UserConfiguration</returns>
+        UserConfiguration ShowConfiguration (string configurationId);
+
+        /// <summary>
+        /// Displays a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / show
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        ApiResponse<UserConfiguration> ShowConfigurationWithHttpInfo (string configurationId);
+        /// <summary>
         /// Updates a specific API Key.
         /// </summary>
         /// <remarks>
@@ -174,6 +260,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="apiKeyBody"></param>
         /// <returns>ApiResponse of ApiKeyFull</returns>
         ApiResponse<ApiKeyFull> UpdateApiKeyWithHttpInfo (int apiKeyId, ApiKeyFull apiKeyBody);
+        /// <summary>
+        /// Updates a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / update
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>UserConfiguration</returns>
+        UserConfiguration UpdateConfiguration (string configurationId, UserConfiguration configurationBody);
+
+        /// <summary>
+        /// Updates a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / update
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        ApiResponse<UserConfiguration> UpdateConfigurationWithHttpInfo (string configurationId, UserConfiguration configurationBody);
         #endregion Synchronous Operations
     }
 
@@ -205,6 +314,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <returns>Task of ApiResponse (ApiKeyFull)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiKeyFull>> CreateApiKeyAsyncWithHttpInfo (ApiKeyFull apiKeyBody);
         /// <summary>
+        /// Creates a new configuration value for current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / create
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of UserConfiguration</returns>
+        System.Threading.Tasks.Task<UserConfiguration> CreateConfigurationAsync (UserConfiguration configurationBody);
+
+        /// <summary>
+        /// Creates a new configuration value for current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / create
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserConfiguration>> CreateConfigurationAsyncWithHttpInfo (UserConfiguration configurationBody);
+        /// <summary>
         /// Destroys a specific API Key.
         /// </summary>
         /// <remarks>
@@ -225,6 +355,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="apiKeyId">Numeric ID of API Key.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DestroyApiKeyAsyncWithHttpInfo (int apiKeyId);
+        /// <summary>
+        /// Destroys a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DestroyConfigurationAsync (string configurationId);
+
+        /// <summary>
+        /// Destroys a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyConfigurationAsyncWithHttpInfo (string configurationId);
         /// <summary>
         /// Lists all API keys of current user.
         /// </summary>
@@ -248,6 +399,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="offset">The number of items to skip for pagination. (optional)</param>
         /// <returns>Task of ApiResponse (ApiKeyCollection)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiKeyCollection>> IndexApiKeysAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?));
+        /// <summary>
+        /// Lists all configurations of current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / index
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>Task of UserConfigurationCollection</returns>
+        System.Threading.Tasks.Task<UserConfigurationCollection> IndexConfigurationsAsync (int? limit = default(int?), int? offset = default(int?));
+
+        /// <summary>
+        /// Lists all configurations of current user.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / index
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>Task of ApiResponse (UserConfigurationCollection)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserConfigurationCollection>> IndexConfigurationsAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?));
         /// <summary>
         /// List all system groups.
         /// </summary>
@@ -308,6 +482,27 @@ namespace Io.Nodeum.Sdk.Api
         /// <returns>Task of ApiResponse (ApiKeyFull)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiKeyFull>> ShowApiKeyAsyncWithHttpInfo (int apiKeyId);
         /// <summary>
+        /// Displays a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / show
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of UserConfiguration</returns>
+        System.Threading.Tasks.Task<UserConfiguration> ShowConfigurationAsync (string configurationId);
+
+        /// <summary>
+        /// Displays a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / show
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserConfiguration>> ShowConfigurationAsyncWithHttpInfo (string configurationId);
+        /// <summary>
         /// Updates a specific API Key.
         /// </summary>
         /// <remarks>
@@ -330,6 +525,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="apiKeyBody"></param>
         /// <returns>Task of ApiResponse (ApiKeyFull)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiKeyFull>> UpdateApiKeyAsyncWithHttpInfo (int apiKeyId, ApiKeyFull apiKeyBody);
+        /// <summary>
+        /// Updates a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / update
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of UserConfiguration</returns>
+        System.Threading.Tasks.Task<UserConfiguration> UpdateConfigurationAsync (string configurationId, UserConfiguration configurationBody);
+
+        /// <summary>
+        /// Updates a specific configuration value.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: configurations / update
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserConfiguration>> UpdateConfigurationAsyncWithHttpInfo (string configurationId, UserConfiguration configurationBody);
         #endregion Asynchronous Operations
     }
 
@@ -588,6 +806,143 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
+        /// Creates a new configuration value for current user. **API Key Scope**: configurations / create
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>UserConfiguration</returns>
+        public UserConfiguration CreateConfiguration (UserConfiguration configurationBody)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = CreateConfigurationWithHttpInfo(configurationBody);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Creates a new configuration value for current user. **API Key Scope**: configurations / create
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< UserConfiguration > CreateConfigurationWithHttpInfo (UserConfiguration configurationBody)
+        {
+            // verify the required parameter 'configurationBody' is set
+            if (configurationBody == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationBody' when calling UsersApi->CreateConfiguration");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = configurationBody;
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post< UserConfiguration >("/users/me/configurations", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Creates a new configuration value for current user. **API Key Scope**: configurations / create
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of UserConfiguration</returns>
+        public async System.Threading.Tasks.Task<UserConfiguration> CreateConfigurationAsync (UserConfiguration configurationBody)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = await CreateConfigurationAsyncWithHttpInfo(configurationBody);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Creates a new configuration value for current user. **API Key Scope**: configurations / create
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration>> CreateConfigurationAsyncWithHttpInfo (UserConfiguration configurationBody)
+        {
+            // verify the required parameter 'configurationBody' is set
+            if (configurationBody == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationBody' when calling UsersApi->CreateConfiguration");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            localVarRequestOptions.Data = configurationBody;
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UserConfiguration>("/users/me/configurations", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Destroys a specific API Key. **API Key Scope**: api_keys / destroy
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
@@ -704,6 +1059,139 @@ namespace Io.Nodeum.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DestroyApiKey", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Destroys a specific configuration value. **API Key Scope**: configurations / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns></returns>
+        public void DestroyConfiguration (string configurationId)
+        {
+             DestroyConfigurationWithHttpInfo(configurationId);
+        }
+
+        /// <summary>
+        /// Destroys a specific configuration value. **API Key Scope**: configurations / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse<Object> DestroyConfigurationWithHttpInfo (string configurationId)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->DestroyConfiguration");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DestroyConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Destroys a specific configuration value. **API Key Scope**: configurations / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DestroyConfigurationAsync (string configurationId)
+        {
+             await DestroyConfigurationAsyncWithHttpInfo(configurationId);
+
+        }
+
+        /// <summary>
+        /// Destroys a specific configuration value. **API Key Scope**: configurations / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<Object>> DestroyConfigurationAsyncWithHttpInfo (string configurationId)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->DestroyConfiguration");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DestroyConfiguration", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -849,6 +1337,151 @@ namespace Io.Nodeum.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("IndexApiKeys", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Lists all configurations of current user. **API Key Scope**: configurations / index
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>UserConfigurationCollection</returns>
+        public UserConfigurationCollection IndexConfigurations (int? limit = default(int?), int? offset = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfigurationCollection> localVarResponse = IndexConfigurationsWithHttpInfo(limit, offset);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Lists all configurations of current user. **API Key Scope**: configurations / index
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>ApiResponse of UserConfigurationCollection</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< UserConfigurationCollection > IndexConfigurationsWithHttpInfo (int? limit = default(int?), int? offset = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< UserConfigurationCollection >("/users/me/configurations", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("IndexConfigurations", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Lists all configurations of current user. **API Key Scope**: configurations / index
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>Task of UserConfigurationCollection</returns>
+        public async System.Threading.Tasks.Task<UserConfigurationCollection> IndexConfigurationsAsync (int? limit = default(int?), int? offset = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfigurationCollection> localVarResponse = await IndexConfigurationsAsyncWithHttpInfo(limit, offset);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Lists all configurations of current user. **API Key Scope**: configurations / index
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The number of items to display for pagination. (optional)</param>
+        /// <param name="offset">The number of items to skip for pagination. (optional)</param>
+        /// <returns>Task of ApiResponse (UserConfigurationCollection)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<UserConfigurationCollection>> IndexConfigurationsAsyncWithHttpInfo (int? limit = default(int?), int? offset = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (offset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<UserConfigurationCollection>("/users/me/configurations", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("IndexConfigurations", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1225,6 +1858,143 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
+        /// Displays a specific configuration value. **API Key Scope**: configurations / show
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>UserConfiguration</returns>
+        public UserConfiguration ShowConfiguration (string configurationId)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = ShowConfigurationWithHttpInfo(configurationId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Displays a specific configuration value. **API Key Scope**: configurations / show
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< UserConfiguration > ShowConfigurationWithHttpInfo (string configurationId)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->ShowConfiguration");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< UserConfiguration >("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ShowConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Displays a specific configuration value. **API Key Scope**: configurations / show
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of UserConfiguration</returns>
+        public async System.Threading.Tasks.Task<UserConfiguration> ShowConfigurationAsync (string configurationId)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = await ShowConfigurationAsyncWithHttpInfo(configurationId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Displays a specific configuration value. **API Key Scope**: configurations / show
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration>> ShowConfigurationAsyncWithHttpInfo (string configurationId)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->ShowConfiguration");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<UserConfiguration>("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ShowConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Updates a specific API Key. **API Key Scope**: api_keys / update
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1361,6 +2131,159 @@ namespace Io.Nodeum.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateApiKey", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Updates a specific configuration value. **API Key Scope**: configurations / update
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>UserConfiguration</returns>
+        public UserConfiguration UpdateConfiguration (string configurationId, UserConfiguration configurationBody)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = UpdateConfigurationWithHttpInfo(configurationId, configurationBody);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates a specific configuration value. **API Key Scope**: configurations / update
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>ApiResponse of UserConfiguration</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< UserConfiguration > UpdateConfigurationWithHttpInfo (string configurationId, UserConfiguration configurationBody)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->UpdateConfiguration");
+
+            // verify the required parameter 'configurationBody' is set
+            if (configurationBody == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationBody' when calling UsersApi->UpdateConfiguration");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+            localVarRequestOptions.Data = configurationBody;
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put< UserConfiguration >("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateConfiguration", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Updates a specific configuration value. **API Key Scope**: configurations / update
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of UserConfiguration</returns>
+        public async System.Threading.Tasks.Task<UserConfiguration> UpdateConfigurationAsync (string configurationId, UserConfiguration configurationBody)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration> localVarResponse = await UpdateConfigurationAsyncWithHttpInfo(configurationId, configurationBody);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Updates a specific configuration value. **API Key Scope**: configurations / update
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="configurationId">Numeric ID, or key of configuration.</param>
+        /// <param name="configurationBody"></param>
+        /// <returns>Task of ApiResponse (UserConfiguration)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<UserConfiguration>> UpdateConfigurationAsyncWithHttpInfo (string configurationId, UserConfiguration configurationBody)
+        {
+            // verify the required parameter 'configurationId' is set
+            if (configurationId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationId' when calling UsersApi->UpdateConfiguration");
+
+            // verify the required parameter 'configurationBody' is set
+            if (configurationBody == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configurationBody' when calling UsersApi->UpdateConfiguration");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (configurationId != null)
+                localVarRequestOptions.PathParameters.Add("configuration_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(configurationId)); // path parameter
+            localVarRequestOptions.Data = configurationBody;
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<UserConfiguration>("/users/me/configurations/{configuration_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateConfiguration", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

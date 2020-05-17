@@ -34,17 +34,17 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByGroupOwnerFacetAllOf" /> class.
         /// </summary>
-        /// <param name="groupOwnerId">groupOwnerId.</param>
-        public ByGroupOwnerFacetAllOf(ByDateFacetBuckets groupOwnerId = default(ByDateFacetBuckets))
+        /// <param name="groupOwnerIdL">groupOwnerIdL.</param>
+        public ByGroupOwnerFacetAllOf(ByDateFacetBuckets groupOwnerIdL = default(ByDateFacetBuckets))
         {
-            this.GroupOwnerId = groupOwnerId;
+            this.GroupOwnerIdL = groupOwnerIdL;
         }
         
         /// <summary>
-        /// Gets or Sets GroupOwnerId
+        /// Gets or Sets GroupOwnerIdL
         /// </summary>
-        [DataMember(Name="group_owner_id", EmitDefaultValue=false)]
-        public ByDateFacetBuckets GroupOwnerId { get; set; }
+        [DataMember(Name="group_owner_id_l", EmitDefaultValue=false)]
+        public ByDateFacetBuckets GroupOwnerIdL { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ByGroupOwnerFacetAllOf {\n");
-            sb.Append("  GroupOwnerId: ").Append(GroupOwnerId).Append("\n");
+            sb.Append("  GroupOwnerIdL: ").Append(GroupOwnerIdL).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +90,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return 
                 (
-                    this.GroupOwnerId == input.GroupOwnerId ||
-                    (this.GroupOwnerId != null &&
-                    this.GroupOwnerId.Equals(input.GroupOwnerId))
+                    this.GroupOwnerIdL == input.GroupOwnerIdL ||
+                    (this.GroupOwnerIdL != null &&
+                    this.GroupOwnerIdL.Equals(input.GroupOwnerIdL))
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.GroupOwnerId != null)
-                    hashCode = hashCode * 59 + this.GroupOwnerId.GetHashCode();
+                if (this.GroupOwnerIdL != null)
+                    hashCode = hashCode * 59 + this.GroupOwnerIdL.GetHashCode();
                 return hashCode;
             }
         }

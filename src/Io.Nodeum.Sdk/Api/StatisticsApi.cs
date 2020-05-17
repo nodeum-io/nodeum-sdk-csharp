@@ -28,143 +28,466 @@ namespace Io.Nodeum.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by date
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_date
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>ByDateFacet</returns>
+        ByDateFacet StatisticsByDate (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
+
+        /// <summary>
+        /// Get statistics about files, grouped by date
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_date
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>ApiResponse of ByDateFacet</returns>
+        ApiResponse<ByDateFacet> StatisticsByDateWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
+        /// <summary>
+        /// Get statistics about files, grouped by file extension
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_file_extension
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByFileExtensionFacet</returns>
-        ByFileExtensionFacet StatisticsByFileExtension (string q = default(string), string dateAttr = default(string));
+        ByFileExtensionFacet StatisticsByFileExtension (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by file extension
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_file_extension
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByFileExtensionFacet</returns>
-        ApiResponse<ByFileExtensionFacet> StatisticsByFileExtensionWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        ApiResponse<ByFileExtensionFacet> StatisticsByFileExtensionWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (group)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_group_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByGroupOwnerFacet</returns>
-        ByGroupOwnerFacet StatisticsByGroupOwner (string q = default(string), string dateAttr = default(string));
+        ByGroupOwnerFacet StatisticsByGroupOwner (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (group)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_group_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByGroupOwnerFacet</returns>
-        ApiResponse<ByGroupOwnerFacet> StatisticsByGroupOwnerWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        ApiResponse<ByGroupOwnerFacet> StatisticsByGroupOwnerWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryCloudFacet</returns>
+        ByPrimaryCloudFacet StatisticsByPrimaryCloud (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryCloudFacet</returns>
+        ApiResponse<ByPrimaryCloudFacet> StatisticsByPrimaryCloudWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by primary storages
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_primary_name
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByPrimaryFacet</returns>
-        ByPrimaryFacet StatisticsByPrimaryName (string q = default(string), string dateAttr = default(string));
+        ByPrimaryFacet StatisticsByPrimaryName (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary storages
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_primary_name
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByPrimaryFacet</returns>
-        ApiResponse<ByPrimaryFacet> StatisticsByPrimaryNameWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        ApiResponse<ByPrimaryFacet> StatisticsByPrimaryNameWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary NAS
         /// </summary>
         /// <remarks>
-        /// **API Key Scope**: statistics / by_secondary_storage
+        /// **API Key Scope**: statistics / by_primary_nas
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>BySecondaryFacet</returns>
-        BySecondaryFacet StatisticsBySecondaryStorage (string q = default(string), string dateAttr = default(string));
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryNasFacet</returns>
+        ByPrimaryNasFacet StatisticsByPrimaryNas (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryNasFacet</returns>
+        ApiResponse<ByPrimaryNasFacet> StatisticsByPrimaryNasWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryStorageFacet</returns>
+        ByPrimaryStorageFacet StatisticsByPrimaryStorage (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryStorageFacet</returns>
+        ApiResponse<ByPrimaryStorageFacet> StatisticsByPrimaryStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryCloudFacet</returns>
+        BySecondaryCloudFacet StatisticsBySecondaryCloud (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryCloudFacet</returns>
+        ApiResponse<BySecondaryCloudFacet> StatisticsBySecondaryCloudWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryNasFacet</returns>
+        BySecondaryNasFacet StatisticsBySecondaryNas (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryNasFacet</returns>
+        ApiResponse<BySecondaryNasFacet> StatisticsBySecondaryNasWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_secondary_storage
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ApiResponse of BySecondaryFacet</returns>
-        ApiResponse<BySecondaryFacet> StatisticsBySecondaryStorageWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryStorageFacet</returns>
+        BySecondaryStorageFacet StatisticsBySecondaryStorage (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by secondary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryStorageFacet</returns>
+        ApiResponse<BySecondaryStorageFacet> StatisticsBySecondaryStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_tape
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryTapeFacet</returns>
+        BySecondaryTapeFacet StatisticsBySecondaryTape (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_tape
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryTapeFacet</returns>
+        ApiResponse<BySecondaryTapeFacet> StatisticsBySecondaryTapeWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by size
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_size
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>BySizeFacet</returns>
-        BySizeFacet StatisticsBySize (string q = default(string), string dateAttr = default(string));
+        BySizeFacet StatisticsBySize (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by size
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_size
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>ApiResponse of BySizeFacet</returns>
-        ApiResponse<BySizeFacet> StatisticsBySizeWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        ApiResponse<BySizeFacet> StatisticsBySizeWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (user)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_user_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByUserOwnerFacet</returns>
-        ByUserOwnerFacet StatisticsByUserOwner (string q = default(string), string dateAttr = default(string));
+        ByUserOwnerFacet StatisticsByUserOwner (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (user)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_user_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByUserOwnerFacet</returns>
-        ApiResponse<ByUserOwnerFacet> StatisticsByUserOwnerWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        ApiResponse<ByUserOwnerFacet> StatisticsByUserOwnerWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about storages, grouped by types
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / storages
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>StorageFacet</returns>
+        StorageFacet StatisticsStorage (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / storages
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of StorageFacet</returns>
+        ApiResponse<StorageFacet> StatisticsStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_status
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskStatusFacet</returns>
+        ByTaskStatusFacet StatisticsTaskByStatus (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_status
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskStatusFacet</returns>
+        ApiResponse<ByTaskStatusFacet> StatisticsTaskByStatusWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskStorageFacet</returns>
+        ByTaskStorageFacet StatisticsTaskByStorage (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskStorageFacet</returns>
+        ApiResponse<ByTaskStorageFacet> StatisticsTaskByStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_workflow
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskWorkflowFacet</returns>
+        ByTaskWorkflowFacet StatisticsTaskByWorkflow (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_workflow
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskWorkflowFacet</returns>
+        ApiResponse<ByTaskWorkflowFacet> StatisticsTaskByWorkflowWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
         #endregion Synchronous Operations
     }
 
@@ -175,143 +498,466 @@ namespace Io.Nodeum.Sdk.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by date
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_date
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>Task of ByDateFacet</returns>
+        System.Threading.Tasks.Task<ByDateFacet> StatisticsByDateAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
+
+        /// <summary>
+        /// Get statistics about files, grouped by date
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_date
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>Task of ApiResponse (ByDateFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByDateFacet>> StatisticsByDateAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
+        /// <summary>
+        /// Get statistics about files, grouped by file extension
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_file_extension
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByFileExtensionFacet</returns>
-        System.Threading.Tasks.Task<ByFileExtensionFacet> StatisticsByFileExtensionAsync (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ByFileExtensionFacet> StatisticsByFileExtensionAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by file extension
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_file_extension
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByFileExtensionFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ByFileExtensionFacet>> StatisticsByFileExtensionAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ApiResponse<ByFileExtensionFacet>> StatisticsByFileExtensionAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (group)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_group_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByGroupOwnerFacet</returns>
-        System.Threading.Tasks.Task<ByGroupOwnerFacet> StatisticsByGroupOwnerAsync (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ByGroupOwnerFacet> StatisticsByGroupOwnerAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (group)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_group_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByGroupOwnerFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ByGroupOwnerFacet>> StatisticsByGroupOwnerAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ApiResponse<ByGroupOwnerFacet>> StatisticsByGroupOwnerAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryCloudFacet</returns>
+        System.Threading.Tasks.Task<ByPrimaryCloudFacet> StatisticsByPrimaryCloudAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryCloudFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByPrimaryCloudFacet>> StatisticsByPrimaryCloudAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by primary storages
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_primary_name
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByPrimaryFacet</returns>
-        System.Threading.Tasks.Task<ByPrimaryFacet> StatisticsByPrimaryNameAsync (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ByPrimaryFacet> StatisticsByPrimaryNameAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary storages
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_primary_name
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByPrimaryFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ByPrimaryFacet>> StatisticsByPrimaryNameAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ApiResponse<ByPrimaryFacet>> StatisticsByPrimaryNameAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary NAS
         /// </summary>
         /// <remarks>
-        /// **API Key Scope**: statistics / by_secondary_storage
+        /// **API Key Scope**: statistics / by_primary_nas
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>Task of BySecondaryFacet</returns>
-        System.Threading.Tasks.Task<BySecondaryFacet> StatisticsBySecondaryStorageAsync (string q = default(string), string dateAttr = default(string));
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryNasFacet</returns>
+        System.Threading.Tasks.Task<ByPrimaryNasFacet> StatisticsByPrimaryNasAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by primary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryNasFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByPrimaryNasFacet>> StatisticsByPrimaryNasAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryStorageFacet</returns>
+        System.Threading.Tasks.Task<ByPrimaryStorageFacet> StatisticsByPrimaryStorageAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_primary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryStorageFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByPrimaryStorageFacet>> StatisticsByPrimaryStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryCloudFacet</returns>
+        System.Threading.Tasks.Task<BySecondaryCloudFacet> StatisticsBySecondaryCloudAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_cloud
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryCloudFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BySecondaryCloudFacet>> StatisticsBySecondaryCloudAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryNasFacet</returns>
+        System.Threading.Tasks.Task<BySecondaryNasFacet> StatisticsBySecondaryNasAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_nas
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryNasFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BySecondaryNasFacet>> StatisticsBySecondaryNasAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_secondary_storage
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>Task of ApiResponse (BySecondaryFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BySecondaryFacet>> StatisticsBySecondaryStorageAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryStorageFacet</returns>
+        System.Threading.Tasks.Task<BySecondaryStorageFacet> StatisticsBySecondaryStorageAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by secondary storage
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryStorageFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BySecondaryStorageFacet>> StatisticsBySecondaryStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_tape
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryTapeFacet</returns>
+        System.Threading.Tasks.Task<BySecondaryTapeFacet> StatisticsBySecondaryTapeAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / by_secondary_tape
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryTapeFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BySecondaryTapeFacet>> StatisticsBySecondaryTapeAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about files, grouped by size
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_size
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>Task of BySizeFacet</returns>
-        System.Threading.Tasks.Task<BySizeFacet> StatisticsBySizeAsync (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<BySizeFacet> StatisticsBySizeAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by size
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_size
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>Task of ApiResponse (BySizeFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BySizeFacet>> StatisticsBySizeAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ApiResponse<BySizeFacet>> StatisticsBySizeAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string));
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (user)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_user_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByUserOwnerFacet</returns>
-        System.Threading.Tasks.Task<ByUserOwnerFacet> StatisticsByUserOwnerAsync (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ByUserOwnerFacet> StatisticsByUserOwnerAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// TODO
+        /// Get statistics about files, grouped by owner (user)
         /// </summary>
         /// <remarks>
         /// **API Key Scope**: statistics / by_user_owner
         /// </remarks>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByUserOwnerFacet)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ByUserOwnerFacet>> StatisticsByUserOwnerAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string));
+        System.Threading.Tasks.Task<ApiResponse<ByUserOwnerFacet>> StatisticsByUserOwnerAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Get statistics about storages, grouped by types
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / storages
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of StorageFacet</returns>
+        System.Threading.Tasks.Task<StorageFacet> StatisticsStorageAsync (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / storages
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (StorageFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StorageFacet>> StatisticsStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_status
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskStatusFacet</returns>
+        System.Threading.Tasks.Task<ByTaskStatusFacet> StatisticsTaskByStatusAsync (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_status
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskStatusFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByTaskStatusFacet>> StatisticsTaskByStatusAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskStorageFacet</returns>
+        System.Threading.Tasks.Task<ByTaskStorageFacet> StatisticsTaskByStorageAsync (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_storage
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskStorageFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByTaskStorageFacet>> StatisticsTaskByStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_workflow
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskWorkflowFacet</returns>
+        System.Threading.Tasks.Task<ByTaskWorkflowFacet> StatisticsTaskByWorkflowAsync (string q = default(string), List<string> fq = default(List<string>));
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: statistics / task_by_workflow
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskWorkflowFacet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ByTaskWorkflowFacet>> StatisticsTaskByWorkflowAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>));
         #endregion Asynchronous Operations
     }
 
@@ -433,26 +1079,28 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_file_extension
+        /// Get statistics about files, grouped by date **API Key Scope**: statistics / by_date
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ByFileExtensionFacet</returns>
-        public ByFileExtensionFacet StatisticsByFileExtension (string q = default(string), string dateAttr = default(string))
+        /// <returns>ByDateFacet</returns>
+        public ByDateFacet StatisticsByDate (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet> localVarResponse = StatisticsByFileExtensionWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByDateFacet> localVarResponse = StatisticsByDateWithHttpInfo(q, fq, dateAttr);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_file_extension
+        /// Get statistics about files, grouped by date **API Key Scope**: statistics / by_date
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ApiResponse of ByFileExtensionFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< ByFileExtensionFacet > StatisticsByFileExtensionWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        /// <returns>ApiResponse of ByDateFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByDateFacet > StatisticsByDateWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -474,9 +1122,182 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByDateFacet >("/statistics/by_date", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByDate", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by date **API Key Scope**: statistics / by_date
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>Task of ByDateFacet</returns>
+        public async System.Threading.Tasks.Task<ByDateFacet> StatisticsByDateAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByDateFacet> localVarResponse = await StatisticsByDateAsyncWithHttpInfo(q, fq, dateAttr);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by date **API Key Scope**: statistics / by_date
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>Task of ApiResponse (ByDateFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByDateFacet>> StatisticsByDateAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByDateFacet>("/statistics/by_date", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByDate", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by file extension **API Key Scope**: statistics / by_file_extension
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByFileExtensionFacet</returns>
+        public ByFileExtensionFacet StatisticsByFileExtension (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet> localVarResponse = StatisticsByFileExtensionWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by file extension **API Key Scope**: statistics / by_file_extension
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByFileExtensionFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByFileExtensionFacet > StatisticsByFileExtensionWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -504,27 +1325,33 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_file_extension
+        /// Get statistics about files, grouped by file extension **API Key Scope**: statistics / by_file_extension
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByFileExtensionFacet</returns>
-        public async System.Threading.Tasks.Task<ByFileExtensionFacet> StatisticsByFileExtensionAsync (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<ByFileExtensionFacet> StatisticsByFileExtensionAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet> localVarResponse = await StatisticsByFileExtensionAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet> localVarResponse = await StatisticsByFileExtensionAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_file_extension
+        /// Get statistics about files, grouped by file extension **API Key Scope**: statistics / by_file_extension
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByFileExtensionFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet>> StatisticsByFileExtensionAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByFileExtensionFacet>> StatisticsByFileExtensionAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -547,9 +1374,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -578,26 +1417,32 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_group_owner
+        /// Get statistics about files, grouped by owner (group) **API Key Scope**: statistics / by_group_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByGroupOwnerFacet</returns>
-        public ByGroupOwnerFacet StatisticsByGroupOwner (string q = default(string), string dateAttr = default(string))
+        public ByGroupOwnerFacet StatisticsByGroupOwner (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet> localVarResponse = StatisticsByGroupOwnerWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet> localVarResponse = StatisticsByGroupOwnerWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_group_owner
+        /// Get statistics about files, grouped by owner (group) **API Key Scope**: statistics / by_group_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByGroupOwnerFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< ByGroupOwnerFacet > StatisticsByGroupOwnerWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByGroupOwnerFacet > StatisticsByGroupOwnerWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -619,9 +1464,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -649,27 +1506,33 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_group_owner
+        /// Get statistics about files, grouped by owner (group) **API Key Scope**: statistics / by_group_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByGroupOwnerFacet</returns>
-        public async System.Threading.Tasks.Task<ByGroupOwnerFacet> StatisticsByGroupOwnerAsync (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<ByGroupOwnerFacet> StatisticsByGroupOwnerAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet> localVarResponse = await StatisticsByGroupOwnerAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet> localVarResponse = await StatisticsByGroupOwnerAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_group_owner
+        /// Get statistics about files, grouped by owner (group) **API Key Scope**: statistics / by_group_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByGroupOwnerFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet>> StatisticsByGroupOwnerAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByGroupOwnerFacet>> StatisticsByGroupOwnerAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -692,9 +1555,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -723,26 +1598,32 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_primary_name
+        /// Get statistics about files, grouped by primary Cloud **API Key Scope**: statistics / by_primary_cloud
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ByPrimaryFacet</returns>
-        public ByPrimaryFacet StatisticsByPrimaryName (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryCloudFacet</returns>
+        public ByPrimaryCloudFacet StatisticsByPrimaryCloud (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet> localVarResponse = StatisticsByPrimaryNameWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryCloudFacet> localVarResponse = StatisticsByPrimaryCloudWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_primary_name
+        /// Get statistics about files, grouped by primary Cloud **API Key Scope**: statistics / by_primary_cloud
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ApiResponse of ByPrimaryFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< ByPrimaryFacet > StatisticsByPrimaryNameWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryCloudFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByPrimaryCloudFacet > StatisticsByPrimaryCloudWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -764,9 +1645,202 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByPrimaryCloudFacet >("/statistics/by_primary_cloud", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryCloud", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary Cloud **API Key Scope**: statistics / by_primary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryCloudFacet</returns>
+        public async System.Threading.Tasks.Task<ByPrimaryCloudFacet> StatisticsByPrimaryCloudAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryCloudFacet> localVarResponse = await StatisticsByPrimaryCloudAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary Cloud **API Key Scope**: statistics / by_primary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryCloudFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryCloudFacet>> StatisticsByPrimaryCloudAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByPrimaryCloudFacet>("/statistics/by_primary_cloud", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryCloud", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storages **API Key Scope**: statistics / by_primary_name
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryFacet</returns>
+        public ByPrimaryFacet StatisticsByPrimaryName (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet> localVarResponse = StatisticsByPrimaryNameWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storages **API Key Scope**: statistics / by_primary_name
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByPrimaryFacet > StatisticsByPrimaryNameWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -794,27 +1868,33 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_primary_name
+        /// Get statistics about files, grouped by primary storages **API Key Scope**: statistics / by_primary_name
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByPrimaryFacet</returns>
-        public async System.Threading.Tasks.Task<ByPrimaryFacet> StatisticsByPrimaryNameAsync (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<ByPrimaryFacet> StatisticsByPrimaryNameAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet> localVarResponse = await StatisticsByPrimaryNameAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet> localVarResponse = await StatisticsByPrimaryNameAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_primary_name
+        /// Get statistics about files, grouped by primary storages **API Key Scope**: statistics / by_primary_name
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByPrimaryFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet>> StatisticsByPrimaryNameAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryFacet>> StatisticsByPrimaryNameAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -837,9 +1917,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -868,26 +1960,32 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_secondary_storage
+        /// Get statistics about files, grouped by primary NAS **API Key Scope**: statistics / by_primary_nas
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>BySecondaryFacet</returns>
-        public BySecondaryFacet StatisticsBySecondaryStorage (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryNasFacet</returns>
+        public ByPrimaryNasFacet StatisticsByPrimaryNas (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryFacet> localVarResponse = StatisticsBySecondaryStorageWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryNasFacet> localVarResponse = StatisticsByPrimaryNasWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_secondary_storage
+        /// Get statistics about files, grouped by primary NAS **API Key Scope**: statistics / by_primary_nas
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ApiResponse of BySecondaryFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< BySecondaryFacet > StatisticsBySecondaryStorageWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryNasFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByPrimaryNasFacet > StatisticsByPrimaryNasWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -909,9 +2007,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -927,11 +2037,11 @@ namespace Io.Nodeum.Sdk.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get< BySecondaryFacet >("/statistics/by_secondary_storage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get< ByPrimaryNasFacet >("/statistics/by_primary_nas", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryStorage", localVarResponse);
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryNas", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -939,27 +2049,33 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_secondary_storage
+        /// Get statistics about files, grouped by primary NAS **API Key Scope**: statistics / by_primary_nas
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>Task of BySecondaryFacet</returns>
-        public async System.Threading.Tasks.Task<BySecondaryFacet> StatisticsBySecondaryStorageAsync (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryNasFacet</returns>
+        public async System.Threading.Tasks.Task<ByPrimaryNasFacet> StatisticsByPrimaryNasAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryFacet> localVarResponse = await StatisticsBySecondaryStorageAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryNasFacet> localVarResponse = await StatisticsByPrimaryNasAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_secondary_storage
+        /// Get statistics about files, grouped by primary NAS **API Key Scope**: statistics / by_primary_nas
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>Task of ApiResponse (BySecondaryFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryFacet>> StatisticsBySecondaryStorageAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryNasFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryNasFacet>> StatisticsByPrimaryNasAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -982,9 +2098,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -1001,11 +2129,11 @@ namespace Io.Nodeum.Sdk.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<BySecondaryFacet>("/statistics/by_secondary_storage", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByPrimaryNasFacet>("/statistics/by_primary_nas", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryStorage", localVarResponse);
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryNas", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1013,26 +2141,32 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_size
+        /// Get statistics about files, grouped by primary storage **API Key Scope**: statistics / by_primary_storage
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>BySizeFacet</returns>
-        public BySizeFacet StatisticsBySize (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ByPrimaryStorageFacet</returns>
+        public ByPrimaryStorageFacet StatisticsByPrimaryStorage (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet> localVarResponse = StatisticsBySizeWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryStorageFacet> localVarResponse = StatisticsByPrimaryStorageWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_size
+        /// Get statistics about files, grouped by primary storage **API Key Scope**: statistics / by_primary_storage
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
-        /// <returns>ApiResponse of BySizeFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< BySizeFacet > StatisticsBySizeWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of ByPrimaryStorageFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByPrimaryStorageFacet > StatisticsByPrimaryStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -1053,6 +2187,911 @@ namespace Io.Nodeum.Sdk.Api
             if (q != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByPrimaryStorageFacet >("/statistics/by_primary_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage **API Key Scope**: statistics / by_primary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ByPrimaryStorageFacet</returns>
+        public async System.Threading.Tasks.Task<ByPrimaryStorageFacet> StatisticsByPrimaryStorageAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryStorageFacet> localVarResponse = await StatisticsByPrimaryStorageAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by primary storage **API Key Scope**: statistics / by_primary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (ByPrimaryStorageFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByPrimaryStorageFacet>> StatisticsByPrimaryStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByPrimaryStorageFacet>("/statistics/by_primary_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsByPrimaryStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud **API Key Scope**: statistics / by_secondary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryCloudFacet</returns>
+        public BySecondaryCloudFacet StatisticsBySecondaryCloud (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryCloudFacet> localVarResponse = StatisticsBySecondaryCloudWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud **API Key Scope**: statistics / by_secondary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryCloudFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< BySecondaryCloudFacet > StatisticsBySecondaryCloudWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< BySecondaryCloudFacet >("/statistics/by_secondary_cloud", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryCloud", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud **API Key Scope**: statistics / by_secondary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryCloudFacet</returns>
+        public async System.Threading.Tasks.Task<BySecondaryCloudFacet> StatisticsBySecondaryCloudAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryCloudFacet> localVarResponse = await StatisticsBySecondaryCloudAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Cloud **API Key Scope**: statistics / by_secondary_cloud
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryCloudFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryCloudFacet>> StatisticsBySecondaryCloudAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BySecondaryCloudFacet>("/statistics/by_secondary_cloud", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryCloud", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS **API Key Scope**: statistics / by_secondary_nas
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryNasFacet</returns>
+        public BySecondaryNasFacet StatisticsBySecondaryNas (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryNasFacet> localVarResponse = StatisticsBySecondaryNasWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS **API Key Scope**: statistics / by_secondary_nas
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryNasFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< BySecondaryNasFacet > StatisticsBySecondaryNasWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< BySecondaryNasFacet >("/statistics/by_secondary_nas", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryNas", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS **API Key Scope**: statistics / by_secondary_nas
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryNasFacet</returns>
+        public async System.Threading.Tasks.Task<BySecondaryNasFacet> StatisticsBySecondaryNasAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryNasFacet> localVarResponse = await StatisticsBySecondaryNasAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary NAS **API Key Scope**: statistics / by_secondary_nas
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryNasFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryNasFacet>> StatisticsBySecondaryNasAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BySecondaryNasFacet>("/statistics/by_secondary_nas", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryNas", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage **API Key Scope**: statistics / by_secondary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryStorageFacet</returns>
+        public BySecondaryStorageFacet StatisticsBySecondaryStorage (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryStorageFacet> localVarResponse = StatisticsBySecondaryStorageWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage **API Key Scope**: statistics / by_secondary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryStorageFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< BySecondaryStorageFacet > StatisticsBySecondaryStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< BySecondaryStorageFacet >("/statistics/by_secondary_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage **API Key Scope**: statistics / by_secondary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryStorageFacet</returns>
+        public async System.Threading.Tasks.Task<BySecondaryStorageFacet> StatisticsBySecondaryStorageAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryStorageFacet> localVarResponse = await StatisticsBySecondaryStorageAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary storage **API Key Scope**: statistics / by_secondary_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryStorageFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryStorageFacet>> StatisticsBySecondaryStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BySecondaryStorageFacet>("/statistics/by_secondary_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape **API Key Scope**: statistics / by_secondary_tape
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>BySecondaryTapeFacet</returns>
+        public BySecondaryTapeFacet StatisticsBySecondaryTape (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryTapeFacet> localVarResponse = StatisticsBySecondaryTapeWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape **API Key Scope**: statistics / by_secondary_tape
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>ApiResponse of BySecondaryTapeFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< BySecondaryTapeFacet > StatisticsBySecondaryTapeWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< BySecondaryTapeFacet >("/statistics/by_secondary_tape", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryTape", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape **API Key Scope**: statistics / by_secondary_tape
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of BySecondaryTapeFacet</returns>
+        public async System.Threading.Tasks.Task<BySecondaryTapeFacet> StatisticsBySecondaryTapeAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryTapeFacet> localVarResponse = await StatisticsBySecondaryTapeAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by secondary Tape **API Key Scope**: statistics / by_secondary_tape
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (BySecondaryTapeFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySecondaryTapeFacet>> StatisticsBySecondaryTapeAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+            if (dateAttr != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<BySecondaryTapeFacet>("/statistics/by_secondary_tape", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsBySecondaryTape", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by size **API Key Scope**: statistics / by_size
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>BySizeFacet</returns>
+        public BySizeFacet StatisticsBySize (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet> localVarResponse = StatisticsBySizeWithHttpInfo(q, fq, dateAttr);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about files, grouped by size **API Key Scope**: statistics / by_size
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <returns>ApiResponse of BySizeFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< BySizeFacet > StatisticsBySizeWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
             }
             if (dateAttr != null)
             {
@@ -1084,27 +3123,29 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_size
+        /// Get statistics about files, grouped by size **API Key Scope**: statistics / by_size
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>Task of BySizeFacet</returns>
-        public async System.Threading.Tasks.Task<BySizeFacet> StatisticsBySizeAsync (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<BySizeFacet> StatisticsBySizeAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet> localVarResponse = await StatisticsBySizeAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet> localVarResponse = await StatisticsBySizeAsyncWithHttpInfo(q, fq, dateAttr);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_size
+        /// Get statistics about files, grouped by size **API Key Scope**: statistics / by_size
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
         /// <returns>Task of ApiResponse (BySizeFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet>> StatisticsBySizeAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<BySizeFacet>> StatisticsBySizeAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -1126,6 +3167,10 @@ namespace Io.Nodeum.Sdk.Api
             if (q != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
             }
             if (dateAttr != null)
             {
@@ -1158,26 +3203,32 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_user_owner
+        /// Get statistics about files, grouped by owner (user) **API Key Scope**: statistics / by_user_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ByUserOwnerFacet</returns>
-        public ByUserOwnerFacet StatisticsByUserOwner (string q = default(string), string dateAttr = default(string))
+        public ByUserOwnerFacet StatisticsByUserOwner (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet> localVarResponse = StatisticsByUserOwnerWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet> localVarResponse = StatisticsByUserOwnerWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_user_owner
+        /// Get statistics about files, grouped by owner (user) **API Key Scope**: statistics / by_user_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>ApiResponse of ByUserOwnerFacet</returns>
-        public Io.Nodeum.Sdk.Client.ApiResponse< ByUserOwnerFacet > StatisticsByUserOwnerWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByUserOwnerFacet > StatisticsByUserOwnerWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
 
@@ -1199,9 +3250,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -1229,27 +3292,33 @@ namespace Io.Nodeum.Sdk.Api
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_user_owner
+        /// Get statistics about files, grouped by owner (user) **API Key Scope**: statistics / by_user_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ByUserOwnerFacet</returns>
-        public async System.Threading.Tasks.Task<ByUserOwnerFacet> StatisticsByUserOwnerAsync (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<ByUserOwnerFacet> StatisticsByUserOwnerAsync (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
-             Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet> localVarResponse = await StatisticsByUserOwnerAsyncWithHttpInfo(q, dateAttr);
+             Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet> localVarResponse = await StatisticsByUserOwnerAsyncWithHttpInfo(q, fq, dateAttr, sort, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// TODO **API Key Scope**: statistics / by_user_owner
+        /// Get statistics about files, grouped by owner (user) **API Key Scope**: statistics / by_user_owner
         /// </summary>
         /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
         /// <param name="dateAttr">Type of date to facet on (optional)</param>
+        /// <param name="sort">Sort results of facet (optional, default to count)</param>
+        /// <param name="limit">Limit results of facet (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (ByUserOwnerFacet)</returns>
-        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet>> StatisticsByUserOwnerAsyncWithHttpInfo (string q = default(string), string dateAttr = default(string))
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByUserOwnerFacet>> StatisticsByUserOwnerAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>), string dateAttr = default(string), string sort = default(string), int? limit = default(int?))
         {
 
             Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
@@ -1272,9 +3341,21 @@ namespace Io.Nodeum.Sdk.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
             }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
             if (dateAttr != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "date_attr", dateAttr));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (BasicAuth) required
@@ -1296,6 +3377,586 @@ namespace Io.Nodeum.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("StatisticsByUserOwner", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types **API Key Scope**: statistics / storages
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>StorageFacet</returns>
+        public StorageFacet StatisticsStorage (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<StorageFacet> localVarResponse = StatisticsStorageWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types **API Key Scope**: statistics / storages
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of StorageFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< StorageFacet > StatisticsStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< StorageFacet >("/statistics/storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types **API Key Scope**: statistics / storages
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of StorageFacet</returns>
+        public async System.Threading.Tasks.Task<StorageFacet> StatisticsStorageAsync (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<StorageFacet> localVarResponse = await StatisticsStorageAsyncWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about storages, grouped by types **API Key Scope**: statistics / storages
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (StorageFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<StorageFacet>> StatisticsStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<StorageFacet>("/statistics/storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status **API Key Scope**: statistics / task_by_status
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskStatusFacet</returns>
+        public ByTaskStatusFacet StatisticsTaskByStatus (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStatusFacet> localVarResponse = StatisticsTaskByStatusWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status **API Key Scope**: statistics / task_by_status
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskStatusFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByTaskStatusFacet > StatisticsTaskByStatusWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByTaskStatusFacet >("/statistics/task_by_status", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByStatus", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status **API Key Scope**: statistics / task_by_status
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskStatusFacet</returns>
+        public async System.Threading.Tasks.Task<ByTaskStatusFacet> StatisticsTaskByStatusAsync (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStatusFacet> localVarResponse = await StatisticsTaskByStatusAsyncWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by status **API Key Scope**: statistics / task_by_status
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskStatusFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStatusFacet>> StatisticsTaskByStatusAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByTaskStatusFacet>("/statistics/task_by_status", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByStatus", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination **API Key Scope**: statistics / task_by_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskStorageFacet</returns>
+        public ByTaskStorageFacet StatisticsTaskByStorage (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStorageFacet> localVarResponse = StatisticsTaskByStorageWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination **API Key Scope**: statistics / task_by_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskStorageFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByTaskStorageFacet > StatisticsTaskByStorageWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByTaskStorageFacet >("/statistics/task_by_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination **API Key Scope**: statistics / task_by_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskStorageFacet</returns>
+        public async System.Threading.Tasks.Task<ByTaskStorageFacet> StatisticsTaskByStorageAsync (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStorageFacet> localVarResponse = await StatisticsTaskByStorageAsyncWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by source and destination **API Key Scope**: statistics / task_by_storage
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskStorageFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByTaskStorageFacet>> StatisticsTaskByStorageAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByTaskStorageFacet>("/statistics/task_by_storage", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByStorage", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow **API Key Scope**: statistics / task_by_workflow
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ByTaskWorkflowFacet</returns>
+        public ByTaskWorkflowFacet StatisticsTaskByWorkflow (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskWorkflowFacet> localVarResponse = StatisticsTaskByWorkflowWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow **API Key Scope**: statistics / task_by_workflow
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>ApiResponse of ByTaskWorkflowFacet</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< ByTaskWorkflowFacet > StatisticsTaskByWorkflowWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get< ByTaskWorkflowFacet >("/statistics/task_by_workflow", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByWorkflow", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow **API Key Scope**: statistics / task_by_workflow
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ByTaskWorkflowFacet</returns>
+        public async System.Threading.Tasks.Task<ByTaskWorkflowFacet> StatisticsTaskByWorkflowAsync (string q = default(string), List<string> fq = default(List<string>))
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<ByTaskWorkflowFacet> localVarResponse = await StatisticsTaskByWorkflowAsyncWithHttpInfo(q, fq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get statistics about tasks executions, grouped by workflow **API Key Scope**: statistics / task_by_workflow
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="q">Solr query (optional)</param>
+        /// <param name="fq">Solr filter query  Multiple query can be separated by &#x60;|&#x60;. (optional)</param>
+        /// <returns>Task of ApiResponse (ByTaskWorkflowFacet)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<ByTaskWorkflowFacet>> StatisticsTaskByWorkflowAsyncWithHttpInfo (string q = default(string), List<string> fq = default(List<string>))
+        {
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (q != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            }
+            if (fq != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Io.Nodeum.Sdk.Client.ClientUtils.ParameterToMultiMap("pipe", "fq", fq));
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ByTaskWorkflowFacet>("/statistics/task_by_workflow", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("StatisticsTaskByWorkflow", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

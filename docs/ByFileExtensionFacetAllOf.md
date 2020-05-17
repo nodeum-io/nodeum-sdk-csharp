@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FileExtension** | [**ByDateFacetBuckets**](ByDateFacetBuckets.md) |  | [optional] 
+**FileExtensionS** | [**ByDateFacetBuckets**](ByDateFacetBuckets.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

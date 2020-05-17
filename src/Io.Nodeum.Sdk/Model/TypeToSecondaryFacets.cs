@@ -38,13 +38,15 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="onSecondaryPublicCloud">onSecondaryPublicCloud.</param>
         /// <param name="onSecondaryObjectCloud">onSecondaryObjectCloud.</param>
         /// <param name="onSecondaryTape">onSecondaryTape.</param>
+        /// <param name="onAnySecondary">onAnySecondary.</param>
         /// <param name="onNoSecondary">onNoSecondary.</param>
-        public TypeToSecondaryFacets(BySecondaryTypeFacet onSecondaryNas = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryPublicCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryObjectCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryTape = default(BySecondaryTypeFacet), BySecondaryTypeFacet onNoSecondary = default(BySecondaryTypeFacet))
+        public TypeToSecondaryFacets(BySecondaryTypeFacet onSecondaryNas = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryPublicCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryObjectCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryTape = default(BySecondaryTypeFacet), BySecondaryTypeFacet onAnySecondary = default(BySecondaryTypeFacet), BySecondaryTypeFacet onNoSecondary = default(BySecondaryTypeFacet))
         {
             this.OnSecondaryNas = onSecondaryNas;
             this.OnSecondaryPublicCloud = onSecondaryPublicCloud;
             this.OnSecondaryObjectCloud = onSecondaryObjectCloud;
             this.OnSecondaryTape = onSecondaryTape;
+            this.OnAnySecondary = onAnySecondary;
             this.OnNoSecondary = onNoSecondary;
         }
         
@@ -73,6 +75,12 @@ namespace Io.Nodeum.Sdk.Model
         public BySecondaryTypeFacet OnSecondaryTape { get; set; }
 
         /// <summary>
+        /// Gets or Sets OnAnySecondary
+        /// </summary>
+        [DataMember(Name="on_any_secondary", EmitDefaultValue=false)]
+        public BySecondaryTypeFacet OnAnySecondary { get; set; }
+
+        /// <summary>
         /// Gets or Sets OnNoSecondary
         /// </summary>
         [DataMember(Name="on_no_secondary", EmitDefaultValue=false)]
@@ -90,6 +98,7 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  OnSecondaryPublicCloud: ").Append(OnSecondaryPublicCloud).Append("\n");
             sb.Append("  OnSecondaryObjectCloud: ").Append(OnSecondaryObjectCloud).Append("\n");
             sb.Append("  OnSecondaryTape: ").Append(OnSecondaryTape).Append("\n");
+            sb.Append("  OnAnySecondary: ").Append(OnAnySecondary).Append("\n");
             sb.Append("  OnNoSecondary: ").Append(OnNoSecondary).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -146,6 +155,11 @@ namespace Io.Nodeum.Sdk.Model
                     this.OnSecondaryTape.Equals(input.OnSecondaryTape))
                 ) && 
                 (
+                    this.OnAnySecondary == input.OnAnySecondary ||
+                    (this.OnAnySecondary != null &&
+                    this.OnAnySecondary.Equals(input.OnAnySecondary))
+                ) && 
+                (
                     this.OnNoSecondary == input.OnNoSecondary ||
                     (this.OnNoSecondary != null &&
                     this.OnNoSecondary.Equals(input.OnNoSecondary))
@@ -169,6 +183,8 @@ namespace Io.Nodeum.Sdk.Model
                     hashCode = hashCode * 59 + this.OnSecondaryObjectCloud.GetHashCode();
                 if (this.OnSecondaryTape != null)
                     hashCode = hashCode * 59 + this.OnSecondaryTape.GetHashCode();
+                if (this.OnAnySecondary != null)
+                    hashCode = hashCode * 59 + this.OnAnySecondary.GetHashCode();
                 if (this.OnNoSecondary != null)
                     hashCode = hashCode * 59 + this.OnNoSecondary.GetHashCode();
                 return hashCode;

@@ -36,7 +36,9 @@ namespace Io.Nodeum.Sdk.Model
         /// </summary>
         /// <param name="val">val.</param>
         /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
+        /// <param name="cost">cost.</param>
         /// <param name="inCache">inCache.</param>
         /// <param name="less1Week">less1Week.</param>
         /// <param name="less1Month">less1Month.</param>
@@ -45,7 +47,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="less1Year">less1Year.</param>
         /// <param name="less2Years">less2Years.</param>
         /// <param name="more2Years">more2Years.</param>
-        public ByDateFacetBucket(Object val = default(Object), int count = default(int), int fileSizeSum = default(int), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet)) : base()
+        public ByDateFacetBucket(Object val = default(Object), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet)) : base()
         {
             this.Val = val;
         }

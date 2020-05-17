@@ -34,19 +34,21 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByUserOwnerFacet" /> class.
         /// </summary>
-        /// <param name="userOwnerId">userOwnerId.</param>
+        /// <param name="userOwnerIdL">userOwnerIdL.</param>
         /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
-        public ByUserOwnerFacet(ByDateFacetBuckets userOwnerId = default(ByDateFacetBuckets), int count = default(int), int fileSizeSum = default(int)) : base()
+        /// <param name="cost">cost.</param>
+        public ByUserOwnerFacet(ByDateFacetBuckets userOwnerIdL = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
         {
-            this.UserOwnerId = userOwnerId;
+            this.UserOwnerIdL = userOwnerIdL;
         }
         
         /// <summary>
-        /// Gets or Sets UserOwnerId
+        /// Gets or Sets UserOwnerIdL
         /// </summary>
-        [DataMember(Name="user_owner_id", EmitDefaultValue=false)]
-        public ByDateFacetBuckets UserOwnerId { get; set; }
+        [DataMember(Name="user_owner_id_l", EmitDefaultValue=false)]
+        public ByDateFacetBuckets UserOwnerIdL { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,7 +59,7 @@ namespace Io.Nodeum.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class ByUserOwnerFacet {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  UserOwnerId: ").Append(UserOwnerId).Append("\n");
+            sb.Append("  UserOwnerIdL: ").Append(UserOwnerIdL).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,9 +95,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return base.Equals(input) && 
                 (
-                    this.UserOwnerId == input.UserOwnerId ||
-                    (this.UserOwnerId != null &&
-                    this.UserOwnerId.Equals(input.UserOwnerId))
+                    this.UserOwnerIdL == input.UserOwnerIdL ||
+                    (this.UserOwnerIdL != null &&
+                    this.UserOwnerIdL.Equals(input.UserOwnerIdL))
                 );
         }
 
@@ -108,8 +110,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.UserOwnerId != null)
-                    hashCode = hashCode * 59 + this.UserOwnerId.GetHashCode();
+                if (this.UserOwnerIdL != null)
+                    hashCode = hashCode * 59 + this.UserOwnerIdL.GetHashCode();
                 return hashCode;
             }
         }

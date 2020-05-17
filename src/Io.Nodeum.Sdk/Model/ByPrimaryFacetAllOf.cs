@@ -34,17 +34,17 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByPrimaryFacetAllOf" /> class.
         /// </summary>
-        /// <param name="primaryName">primaryName.</param>
-        public ByPrimaryFacetAllOf(ByDateFacetBuckets primaryName = default(ByDateFacetBuckets))
+        /// <param name="primNameS">primNameS.</param>
+        public ByPrimaryFacetAllOf(ByDateFacetBuckets primNameS = default(ByDateFacetBuckets))
         {
-            this.PrimaryName = primaryName;
+            this.PrimNameS = primNameS;
         }
         
         /// <summary>
-        /// Gets or Sets PrimaryName
+        /// Gets or Sets PrimNameS
         /// </summary>
-        [DataMember(Name="primary_name", EmitDefaultValue=false)]
-        public ByDateFacetBuckets PrimaryName { get; set; }
+        [DataMember(Name="prim_name_s", EmitDefaultValue=false)]
+        public ByDateFacetBuckets PrimNameS { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ByPrimaryFacetAllOf {\n");
-            sb.Append("  PrimaryName: ").Append(PrimaryName).Append("\n");
+            sb.Append("  PrimNameS: ").Append(PrimNameS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +90,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return 
                 (
-                    this.PrimaryName == input.PrimaryName ||
-                    (this.PrimaryName != null &&
-                    this.PrimaryName.Equals(input.PrimaryName))
+                    this.PrimNameS == input.PrimNameS ||
+                    (this.PrimNameS != null &&
+                    this.PrimNameS.Equals(input.PrimNameS))
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PrimaryName != null)
-                    hashCode = hashCode * 59 + this.PrimaryName.GetHashCode();
+                if (this.PrimNameS != null)
+                    hashCode = hashCode * 59 + this.PrimNameS.GetHashCode();
                 return hashCode;
             }
         }

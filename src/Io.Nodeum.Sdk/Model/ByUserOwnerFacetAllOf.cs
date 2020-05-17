@@ -34,17 +34,17 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByUserOwnerFacetAllOf" /> class.
         /// </summary>
-        /// <param name="userOwnerId">userOwnerId.</param>
-        public ByUserOwnerFacetAllOf(ByDateFacetBuckets userOwnerId = default(ByDateFacetBuckets))
+        /// <param name="userOwnerIdL">userOwnerIdL.</param>
+        public ByUserOwnerFacetAllOf(ByDateFacetBuckets userOwnerIdL = default(ByDateFacetBuckets))
         {
-            this.UserOwnerId = userOwnerId;
+            this.UserOwnerIdL = userOwnerIdL;
         }
         
         /// <summary>
-        /// Gets or Sets UserOwnerId
+        /// Gets or Sets UserOwnerIdL
         /// </summary>
-        [DataMember(Name="user_owner_id", EmitDefaultValue=false)]
-        public ByDateFacetBuckets UserOwnerId { get; set; }
+        [DataMember(Name="user_owner_id_l", EmitDefaultValue=false)]
+        public ByDateFacetBuckets UserOwnerIdL { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ByUserOwnerFacetAllOf {\n");
-            sb.Append("  UserOwnerId: ").Append(UserOwnerId).Append("\n");
+            sb.Append("  UserOwnerIdL: ").Append(UserOwnerIdL).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +90,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return 
                 (
-                    this.UserOwnerId == input.UserOwnerId ||
-                    (this.UserOwnerId != null &&
-                    this.UserOwnerId.Equals(input.UserOwnerId))
+                    this.UserOwnerIdL == input.UserOwnerIdL ||
+                    (this.UserOwnerIdL != null &&
+                    this.UserOwnerIdL.Equals(input.UserOwnerIdL))
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserOwnerId != null)
-                    hashCode = hashCode * 59 + this.UserOwnerId.GetHashCode();
+                if (this.UserOwnerIdL != null)
+                    hashCode = hashCode * 59 + this.UserOwnerIdL.GetHashCode();
                 return hashCode;
             }
         }

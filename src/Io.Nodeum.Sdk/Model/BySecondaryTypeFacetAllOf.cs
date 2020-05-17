@@ -34,17 +34,17 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BySecondaryTypeFacetAllOf" /> class.
         /// </summary>
-        /// <param name="secondaryName">secondaryName.</param>
-        public BySecondaryTypeFacetAllOf(BySecondaryBuckets secondaryName = default(BySecondaryBuckets))
+        /// <param name="secPoolNameS">secPoolNameS.</param>
+        public BySecondaryTypeFacetAllOf(ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets))
         {
-            this.SecondaryName = secondaryName;
+            this.SecPoolNameS = secPoolNameS;
         }
         
         /// <summary>
-        /// Gets or Sets SecondaryName
+        /// Gets or Sets SecPoolNameS
         /// </summary>
-        [DataMember(Name="secondary_name", EmitDefaultValue=false)]
-        public BySecondaryBuckets SecondaryName { get; set; }
+        [DataMember(Name="sec_pool_name_s", EmitDefaultValue=false)]
+        public ByDateFacetBuckets SecPoolNameS { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BySecondaryTypeFacetAllOf {\n");
-            sb.Append("  SecondaryName: ").Append(SecondaryName).Append("\n");
+            sb.Append("  SecPoolNameS: ").Append(SecPoolNameS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +90,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return 
                 (
-                    this.SecondaryName == input.SecondaryName ||
-                    (this.SecondaryName != null &&
-                    this.SecondaryName.Equals(input.SecondaryName))
+                    this.SecPoolNameS == input.SecPoolNameS ||
+                    (this.SecPoolNameS != null &&
+                    this.SecPoolNameS.Equals(input.SecPoolNameS))
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SecondaryName != null)
-                    hashCode = hashCode * 59 + this.SecondaryName.GetHashCode();
+                if (this.SecPoolNameS != null)
+                    hashCode = hashCode * 59 + this.SecPoolNameS.GetHashCode();
                 return hashCode;
             }
         }

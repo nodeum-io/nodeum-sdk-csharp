@@ -34,17 +34,17 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByFileExtensionFacetAllOf" /> class.
         /// </summary>
-        /// <param name="fileExtension">fileExtension.</param>
-        public ByFileExtensionFacetAllOf(ByDateFacetBuckets fileExtension = default(ByDateFacetBuckets))
+        /// <param name="fileExtensionS">fileExtensionS.</param>
+        public ByFileExtensionFacetAllOf(ByDateFacetBuckets fileExtensionS = default(ByDateFacetBuckets))
         {
-            this.FileExtension = fileExtension;
+            this.FileExtensionS = fileExtensionS;
         }
         
         /// <summary>
-        /// Gets or Sets FileExtension
+        /// Gets or Sets FileExtensionS
         /// </summary>
-        [DataMember(Name="file_extension", EmitDefaultValue=false)]
-        public ByDateFacetBuckets FileExtension { get; set; }
+        [DataMember(Name="file_extension_s", EmitDefaultValue=false)]
+        public ByDateFacetBuckets FileExtensionS { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Io.Nodeum.Sdk.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ByFileExtensionFacetAllOf {\n");
-            sb.Append("  FileExtension: ").Append(FileExtension).Append("\n");
+            sb.Append("  FileExtensionS: ").Append(FileExtensionS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,9 +90,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return 
                 (
-                    this.FileExtension == input.FileExtension ||
-                    (this.FileExtension != null &&
-                    this.FileExtension.Equals(input.FileExtension))
+                    this.FileExtensionS == input.FileExtensionS ||
+                    (this.FileExtensionS != null &&
+                    this.FileExtensionS.Equals(input.FileExtensionS))
                 );
         }
 
@@ -105,8 +105,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FileExtension != null)
-                    hashCode = hashCode * 59 + this.FileExtension.GetHashCode();
+                if (this.FileExtensionS != null)
+                    hashCode = hashCode * 59 + this.FileExtensionS.GetHashCode();
                 return hashCode;
             }
         }

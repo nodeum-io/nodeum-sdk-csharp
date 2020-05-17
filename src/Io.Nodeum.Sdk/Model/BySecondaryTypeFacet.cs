@@ -34,9 +34,11 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BySecondaryTypeFacet" /> class.
         /// </summary>
-        /// <param name="secondaryName">secondaryName.</param>
+        /// <param name="secPoolNameS">secPoolNameS.</param>
         /// <param name="count">count.</param>
+        /// <param name="filesCount">filesCount.</param>
         /// <param name="fileSizeSum">fileSizeSum.</param>
+        /// <param name="cost">cost.</param>
         /// <param name="inCache">inCache.</param>
         /// <param name="less1Week">less1Week.</param>
         /// <param name="less1Month">less1Month.</param>
@@ -45,16 +47,16 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="less1Year">less1Year.</param>
         /// <param name="less2Years">less2Years.</param>
         /// <param name="more2Years">more2Years.</param>
-        public BySecondaryTypeFacet(BySecondaryBuckets secondaryName = default(BySecondaryBuckets), int count = default(int), int fileSizeSum = default(int), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet)) : base()
+        public BySecondaryTypeFacet(ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet)) : base()
         {
-            this.SecondaryName = secondaryName;
+            this.SecPoolNameS = secPoolNameS;
         }
         
         /// <summary>
-        /// Gets or Sets SecondaryName
+        /// Gets or Sets SecPoolNameS
         /// </summary>
-        [DataMember(Name="secondary_name", EmitDefaultValue=false)]
-        public BySecondaryBuckets SecondaryName { get; set; }
+        [DataMember(Name="sec_pool_name_s", EmitDefaultValue=false)]
+        public ByDateFacetBuckets SecPoolNameS { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,7 +67,7 @@ namespace Io.Nodeum.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class BySecondaryTypeFacet {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  SecondaryName: ").Append(SecondaryName).Append("\n");
+            sb.Append("  SecPoolNameS: ").Append(SecPoolNameS).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,9 +103,9 @@ namespace Io.Nodeum.Sdk.Model
 
             return base.Equals(input) && 
                 (
-                    this.SecondaryName == input.SecondaryName ||
-                    (this.SecondaryName != null &&
-                    this.SecondaryName.Equals(input.SecondaryName))
+                    this.SecPoolNameS == input.SecPoolNameS ||
+                    (this.SecPoolNameS != null &&
+                    this.SecPoolNameS.Equals(input.SecPoolNameS))
                 );
         }
 
@@ -116,8 +118,8 @@ namespace Io.Nodeum.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.SecondaryName != null)
-                    hashCode = hashCode * 59 + this.SecondaryName.GetHashCode();
+                if (this.SecPoolNameS != null)
+                    hashCode = hashCode * 59 + this.SecPoolNameS.GetHashCode();
                 return hashCode;
             }
         }
