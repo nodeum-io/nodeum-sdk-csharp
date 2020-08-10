@@ -34,22 +34,14 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BySecondaryStorageFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
         /// <param name="onSecondaryNas">onSecondaryNas.</param>
         /// <param name="onSecondaryPublicCloud">onSecondaryPublicCloud.</param>
         /// <param name="onSecondaryObjectCloud">onSecondaryObjectCloud.</param>
         /// <param name="onSecondaryTape">onSecondaryTape.</param>
         /// <param name="onAnySecondary">onAnySecondary.</param>
         /// <param name="onNoSecondary">onNoSecondary.</param>
-        public BySecondaryStorageFacet(int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), BySecondaryTypeFacet onSecondaryNas = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryPublicCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryObjectCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryTape = default(BySecondaryTypeFacet), BySecondaryTypeFacet onAnySecondary = default(BySecondaryTypeFacet), BySecondaryTypeFacet onNoSecondary = default(BySecondaryTypeFacet))
+        public BySecondaryStorageFacet(BySecondaryTypeFacet onSecondaryNas = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryPublicCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryObjectCloud = default(BySecondaryTypeFacet), BySecondaryTypeFacet onSecondaryTape = default(BySecondaryTypeFacet), BySecondaryTypeFacet onAnySecondary = default(BySecondaryTypeFacet), BySecondaryTypeFacet onNoSecondary = default(BySecondaryTypeFacet))
         {
-            this.Count = count;
-            this.FilesCount = filesCount;
-            this.FileSizeSum = fileSizeSum;
-            this.Cost = cost;
             this.OnSecondaryNas = onSecondaryNas;
             this.OnSecondaryPublicCloud = onSecondaryPublicCloud;
             this.OnSecondaryObjectCloud = onSecondaryObjectCloud;
@@ -62,25 +54,25 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets FilesCount
         /// </summary>
         [DataMember(Name="files_count", EmitDefaultValue=false)]
-        public int FilesCount { get; set; }
+        public int FilesCount { get; private set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
-        public int FileSizeSum { get; set; }
+        public int FileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
         [DataMember(Name="cost", EmitDefaultValue=false)]
-        public decimal Cost { get; set; }
+        public decimal Cost { get; private set; }
 
         /// <summary>
         /// Gets or Sets OnSecondaryNas

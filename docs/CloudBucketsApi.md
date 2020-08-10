@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**UpdateCloudBucket**](CloudBucketsApi.md#updatecloudbucket) | **PUT** /cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
 [**UpdateCloudBucketByCloudConnector**](CloudBucketsApi.md#updatecloudbucketbycloudconnector) | **PUT** /cloud_connectors/{cloud_connector_id}/cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
 [**UpdateCloudBucketByPool**](CloudBucketsApi.md#updatecloudbucketbypool) | **PUT** /pools/{pool_id}/cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
+[**UpdateConfigFileCloudBucket**](CloudBucketsApi.md#updateconfigfilecloudbucket) | **PUT** /cloud_buckets/{cloud_bucket_id}/config_file | Updates a specific cloud bucket.
 
 
 <a name="indexcloudbuckets"></a>
@@ -1186,6 +1187,87 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A specific cloud bucket. |  -  |
+| **404** | The requested resource was not found. The detailed error will be of type &#x60;not_found&#x60;. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateconfigfilecloudbucket"></a>
+# **UpdateConfigFileCloudBucket**
+> string UpdateConfigFileCloudBucket (string cloudBucketId, System.IO.Stream configFile)
+
+Updates a specific cloud bucket.
+
+**API Key Scope**: cloud_buckets / update_config_file
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Nodeum.Sdk.Api;
+using Io.Nodeum.Sdk.Client;
+using Io.Nodeum.Sdk.Model;
+
+namespace Example
+{
+    public class UpdateConfigFileCloudBucketExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost/api/v2";
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: BearerAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CloudBucketsApi(config);
+            var cloudBucketId = cloudBucketId_example;  // string | Numeric ID or name of cloud bucket.
+            var configFile = BINARY_DATA_HERE;  // System.IO.Stream | Config file to upload.
+
+            try
+            {
+                // Updates a specific cloud bucket.
+                string result = apiInstance.UpdateConfigFileCloudBucket(cloudBucketId, configFile);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CloudBucketsApi.UpdateConfigFileCloudBucket: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudBucketId** | **string**| Numeric ID or name of cloud bucket. | 
+ **configFile** | **System.IO.Stream****System.IO.Stream**| Config file to upload. | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Remote URI |  -  |
 | **404** | The requested resource was not found. The detailed error will be of type &#x60;not_found&#x60;. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

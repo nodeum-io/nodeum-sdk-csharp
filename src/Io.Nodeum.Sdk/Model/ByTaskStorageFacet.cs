@@ -36,14 +36,7 @@ namespace Io.Nodeum.Sdk.Model
         /// </summary>
         /// <param name="source">source.</param>
         /// <param name="destination">destination.</param>
-        /// <param name="count">count.</param>
-        /// <param name="toProcessSizeSum">toProcessSizeSum.</param>
-        /// <param name="processedSizeSum">processedSizeSum.</param>
-        /// <param name="toProcessFilesSum">toProcessFilesSum.</param>
-        /// <param name="processedFilesSum">processedFilesSum.</param>
-        /// <param name="finalizedFilesSum">finalizedFilesSum.</param>
-        /// <param name="bandwidthAvg">bandwidthAvg.</param>
-        public ByTaskStorageFacet(TaskFacetBuckets source = default(TaskFacetBuckets), TaskFacetBuckets destination = default(TaskFacetBuckets), int count = default(int), int toProcessSizeSum = default(int), int processedSizeSum = default(int), int toProcessFilesSum = default(int), int processedFilesSum = default(int), int finalizedFilesSum = default(int), int bandwidthAvg = default(int)) : base()
+        public ByTaskStorageFacet(TaskFacetBuckets source = default(TaskFacetBuckets), TaskFacetBuckets destination = default(TaskFacetBuckets)) : base()
         {
             this.Source = source;
             this.Destination = destination;

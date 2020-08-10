@@ -34,17 +34,16 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
-        public DefaultFacet(int count = default(int))
+        [JsonConstructorAttribute]
+        public DefaultFacet()
         {
-            this.Count = count;
         }
         
         /// <summary>
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -37,11 +37,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="primCloudConnectorNameS">primCloudConnectorNameS.</param>
         /// <param name="primCloudBucketNameS">primCloudBucketNameS.</param>
         /// <param name="primPoolNameS">primPoolNameS.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public ByPrimaryCloudFacet(ByDateFacetBuckets primCloudConnectorNameS = default(ByDateFacetBuckets), ByDateFacetBuckets primCloudBucketNameS = default(ByDateFacetBuckets), ByDateFacetBuckets primPoolNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public ByPrimaryCloudFacet(ByDateFacetBuckets primCloudConnectorNameS = default(ByDateFacetBuckets), ByDateFacetBuckets primCloudBucketNameS = default(ByDateFacetBuckets), ByDateFacetBuckets primPoolNameS = default(ByDateFacetBuckets)) : base()
         {
             this.PrimCloudConnectorNameS = primCloudConnectorNameS;
             this.PrimCloudBucketNameS = primCloudBucketNameS;

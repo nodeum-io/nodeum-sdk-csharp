@@ -34,33 +34,28 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FileFacetAllOf" /> class.
         /// </summary>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public FileFacetAllOf(int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal))
+        [JsonConstructorAttribute]
+        public FileFacetAllOf()
         {
-            this.FilesCount = filesCount;
-            this.FileSizeSum = fileSizeSum;
-            this.Cost = cost;
         }
         
         /// <summary>
         /// Gets or Sets FilesCount
         /// </summary>
         [DataMember(Name="files_count", EmitDefaultValue=false)]
-        public int FilesCount { get; set; }
+        public int FilesCount { get; private set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
-        public int FileSizeSum { get; set; }
+        public int FileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
         [DataMember(Name="cost", EmitDefaultValue=false)]
-        public decimal Cost { get; set; }
+        public decimal Cost { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

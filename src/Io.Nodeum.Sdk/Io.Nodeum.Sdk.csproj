@@ -13,7 +13,7 @@ Contact: info@nodeum.io
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E3AE092-4464-4164-8564-39366933FDBA}</ProjectGuid>
+    <ProjectGuid>{2AB0EB83-80FF-423C-8F31-83B8F40874D4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Io.Nodeum.Sdk</RootNamespace>

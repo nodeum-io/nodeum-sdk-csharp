@@ -34,10 +34,6 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByDateFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
         /// <param name="inCache">inCache.</param>
         /// <param name="less1Week">less1Week.</param>
         /// <param name="less1Month">less1Month.</param>
@@ -46,12 +42,8 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="less1Year">less1Year.</param>
         /// <param name="less2Years">less2Years.</param>
         /// <param name="more2Years">more2Years.</param>
-        public ByDateFacet(int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet))
+        public ByDateFacet(FileFacet inCache = default(FileFacet), FileFacet less1Week = default(FileFacet), FileFacet less1Month = default(FileFacet), FileFacet less3Months = default(FileFacet), FileFacet less6Months = default(FileFacet), FileFacet less1Year = default(FileFacet), FileFacet less2Years = default(FileFacet), FileFacet more2Years = default(FileFacet))
         {
-            this.Count = count;
-            this.FilesCount = filesCount;
-            this.FileSizeSum = fileSizeSum;
-            this.Cost = cost;
             this.InCache = inCache;
             this.Less1Week = less1Week;
             this.Less1Month = less1Month;
@@ -66,25 +58,25 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets FilesCount
         /// </summary>
         [DataMember(Name="files_count", EmitDefaultValue=false)]
-        public int FilesCount { get; set; }
+        public int FilesCount { get; private set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
-        public int FileSizeSum { get; set; }
+        public int FileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
         [DataMember(Name="cost", EmitDefaultValue=false)]
-        public decimal Cost { get; set; }
+        public decimal Cost { get; private set; }
 
         /// <summary>
         /// Gets or Sets InCache

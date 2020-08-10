@@ -389,6 +389,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="cloudBucketBody"></param>
         /// <returns>ApiResponse of CloudBucket</returns>
         ApiResponse<CloudBucket> UpdateCloudBucketByPoolWithHttpInfo (string poolId, string cloudBucketId, CloudBucket cloudBucketBody);
+        /// <summary>
+        /// Updates a specific cloud bucket.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: cloud_buckets / update_config_file
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>string</returns>
+        string UpdateConfigFileCloudBucket (string cloudBucketId, System.IO.Stream configFile);
+
+        /// <summary>
+        /// Updates a specific cloud bucket.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: cloud_buckets / update_config_file
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UpdateConfigFileCloudBucketWithHttpInfo (string cloudBucketId, System.IO.Stream configFile);
         #endregion Synchronous Operations
     }
 
@@ -760,6 +783,29 @@ namespace Io.Nodeum.Sdk.Api
         /// <param name="cloudBucketBody"></param>
         /// <returns>Task of ApiResponse (CloudBucket)</returns>
         System.Threading.Tasks.Task<ApiResponse<CloudBucket>> UpdateCloudBucketByPoolAsyncWithHttpInfo (string poolId, string cloudBucketId, CloudBucket cloudBucketBody);
+        /// <summary>
+        /// Updates a specific cloud bucket.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: cloud_buckets / update_config_file
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UpdateConfigFileCloudBucketAsync (string cloudBucketId, System.IO.Stream configFile);
+
+        /// <summary>
+        /// Updates a specific cloud bucket.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: cloud_buckets / update_config_file
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UpdateConfigFileCloudBucketAsyncWithHttpInfo (string cloudBucketId, System.IO.Stream configFile);
         #endregion Asynchronous Operations
     }
 
@@ -3252,6 +3298,165 @@ namespace Io.Nodeum.Sdk.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateCloudBucketByPool", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Updates a specific cloud bucket. **API Key Scope**: cloud_buckets / update_config_file
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>string</returns>
+        public string UpdateConfigFileCloudBucket (string cloudBucketId, System.IO.Stream configFile)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<string> localVarResponse = UpdateConfigFileCloudBucketWithHttpInfo(cloudBucketId, configFile);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates a specific cloud bucket. **API Key Scope**: cloud_buckets / update_config_file
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>ApiResponse of string</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse< string > UpdateConfigFileCloudBucketWithHttpInfo (string cloudBucketId, System.IO.Stream configFile)
+        {
+            // verify the required parameter 'cloudBucketId' is set
+            if (cloudBucketId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'cloudBucketId' when calling CloudBucketsApi->UpdateConfigFileCloudBucket");
+
+            // verify the required parameter 'configFile' is set
+            if (configFile == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configFile' when calling CloudBucketsApi->UpdateConfigFileCloudBucket");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (cloudBucketId != null)
+                localVarRequestOptions.PathParameters.Add("cloud_bucket_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(cloudBucketId)); // path parameter
+            if (configFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("config_file", configFile);
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put< string >("/cloud_buckets/{cloud_bucket_id}/config_file", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateConfigFileCloudBucket", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Updates a specific cloud bucket. **API Key Scope**: cloud_buckets / update_config_file
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UpdateConfigFileCloudBucketAsync (string cloudBucketId, System.IO.Stream configFile)
+        {
+             Io.Nodeum.Sdk.Client.ApiResponse<string> localVarResponse = await UpdateConfigFileCloudBucketAsyncWithHttpInfo(cloudBucketId, configFile);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Updates a specific cloud bucket. **API Key Scope**: cloud_buckets / update_config_file
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cloudBucketId">Numeric ID or name of cloud bucket.</param>
+        /// <param name="configFile">Config file to upload.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<string>> UpdateConfigFileCloudBucketAsyncWithHttpInfo (string cloudBucketId, System.IO.Stream configFile)
+        {
+            // verify the required parameter 'cloudBucketId' is set
+            if (cloudBucketId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'cloudBucketId' when calling CloudBucketsApi->UpdateConfigFileCloudBucket");
+
+            // verify the required parameter 'configFile' is set
+            if (configFile == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'configFile' when calling CloudBucketsApi->UpdateConfigFileCloudBucket");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+                "multipart/form-data"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (cloudBucketId != null)
+                localVarRequestOptions.PathParameters.Add("cloud_bucket_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(cloudBucketId)); // path parameter
+            if (configFile != null)
+            {
+                localVarRequestOptions.FileParameters.Add("config_file", configFile);
+            }
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<string>("/cloud_buckets/{cloud_bucket_id}/config_file", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateConfigFileCloudBucket", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

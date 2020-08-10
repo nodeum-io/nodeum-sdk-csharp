@@ -35,9 +35,11 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="CloudBucket" /> class.
         /// </summary>
         /// <param name="price">price.</param>
-        public CloudBucket(string price = default(string))
+        /// <param name="options">S3FS mounting options, separated by comma.</param>
+        public CloudBucket(string price = default(string), string options = default(string))
         {
             this.Price = price;
+            this.Options = options;
         }
         
         /// <summary>
@@ -89,6 +91,13 @@ namespace Io.Nodeum.Sdk.Model
         public string Price { get; set; }
 
         /// <summary>
+        /// S3FS mounting options, separated by comma
+        /// </summary>
+        /// <value>S3FS mounting options, separated by comma</value>
+        [DataMember(Name="options", EmitDefaultValue=false)]
+        public string Options { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +113,7 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  FileSizeSum: ").Append(FileSizeSum).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,6 +182,11 @@ namespace Io.Nodeum.Sdk.Model
                     this.Price == input.Price ||
                     (this.Price != null &&
                     this.Price.Equals(input.Price))
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
                 );
         }
 
@@ -195,6 +210,8 @@ namespace Io.Nodeum.Sdk.Model
                     hashCode = hashCode * 59 + this.Location.GetHashCode();
                 if (this.Price != null)
                     hashCode = hashCode * 59 + this.Price.GetHashCode();
+                if (this.Options != null)
+                    hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

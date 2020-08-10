@@ -34,41 +34,34 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemUser" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="uid">uid.</param>
-        /// <param name="gid">gid.</param>
-        /// <param name="info">info.</param>
-        public SystemUser(string name = default(string), int uid = default(int), int gid = default(int), string info = default(string))
+        [JsonConstructorAttribute]
+        public SystemUser()
         {
-            this.Name = name;
-            this.Uid = uid;
-            this.Gid = gid;
-            this.Info = info;
         }
         
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets or Sets Uid
         /// </summary>
         [DataMember(Name="uid", EmitDefaultValue=false)]
-        public int Uid { get; set; }
+        public int Uid { get; private set; }
 
         /// <summary>
         /// Gets or Sets Gid
         /// </summary>
         [DataMember(Name="gid", EmitDefaultValue=false)]
-        public int Gid { get; set; }
+        public int Gid { get; private set; }
 
         /// <summary>
         /// Gets or Sets Info
         /// </summary>
         [DataMember(Name="info", EmitDefaultValue=false)]
-        public string Info { get; set; }
+        public string Info { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

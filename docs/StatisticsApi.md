@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**StatisticsByDate**](StatisticsApi.md#statisticsbydate) | **GET** /statistics/by_date | Get statistics about files, grouped by date
 [**StatisticsByFileExtension**](StatisticsApi.md#statisticsbyfileextension) | **GET** /statistics/by_file_extension | Get statistics about files, grouped by file extension
 [**StatisticsByGroupOwner**](StatisticsApi.md#statisticsbygroupowner) | **GET** /statistics/by_group_owner | Get statistics about files, grouped by owner (group)
+[**StatisticsByMetadata**](StatisticsApi.md#statisticsbymetadata) | **GET** /statistics/by_metadata | Get statistics about files, grouped by metadata
 [**StatisticsByPrimaryCloud**](StatisticsApi.md#statisticsbyprimarycloud) | **GET** /statistics/by_primary_cloud | Get statistics about files, grouped by primary Cloud
 [**StatisticsByPrimaryName**](StatisticsApi.md#statisticsbyprimaryname) | **GET** /statistics/by_primary_name | Get statistics about files, grouped by primary storages
 [**StatisticsByPrimaryNas**](StatisticsApi.md#statisticsbyprimarynas) | **GET** /statistics/by_primary_nas | Get statistics about files, grouped by primary NAS
@@ -18,6 +19,7 @@ Method | HTTP request | Description
 [**StatisticsBySize**](StatisticsApi.md#statisticsbysize) | **GET** /statistics/by_size | Get statistics about files, grouped by size
 [**StatisticsByUserOwner**](StatisticsApi.md#statisticsbyuserowner) | **GET** /statistics/by_user_owner | Get statistics about files, grouped by owner (user)
 [**StatisticsStorage**](StatisticsApi.md#statisticsstorage) | **GET** /statistics/storage | Get statistics about storages, grouped by types
+[**StatisticsTaskByMetadata**](StatisticsApi.md#statisticstaskbymetadata) | **GET** /statistics/task_by_metadata | Get statistics about tasks executions, grouped by metadata
 [**StatisticsTaskByStatus**](StatisticsApi.md#statisticstaskbystatus) | **GET** /statistics/task_by_status | Get statistics about tasks executions, grouped by status
 [**StatisticsTaskByStorage**](StatisticsApi.md#statisticstaskbystorage) | **GET** /statistics/task_by_storage | Get statistics about tasks executions, grouped by source and destination
 [**StatisticsTaskByWorkflow**](StatisticsApi.md#statisticstaskbyworkflow) | **GET** /statistics/task_by_workflow | Get statistics about tasks executions, grouped by workflow
@@ -260,6 +262,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ByGroupOwnerFacet**](ByGroupOwnerFacet.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="statisticsbymetadata"></a>
+# **StatisticsByMetadata**
+> ByMetadataFacet StatisticsByMetadata (string q = null, List<string> fq = null, string dateAttr = null, string sort = null, int? limit = null)
+
+Get statistics about files, grouped by metadata
+
+**API Key Scope**: statistics / by_metadata
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Nodeum.Sdk.Api;
+using Io.Nodeum.Sdk.Client;
+using Io.Nodeum.Sdk.Model;
+
+namespace Example
+{
+    public class StatisticsByMetadataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost/api/v2";
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: BearerAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StatisticsApi(config);
+            var q = q_example;  // string | Solr query (optional) 
+            var fq = new List<string>(); // List<string> | Solr filter query  Multiple query can be separated by `|`. (optional) 
+            var dateAttr = dateAttr_example;  // string | Type of date to facet on (optional) 
+            var sort = sort_example;  // string | Sort results of facet (optional)  (default to count)
+            var limit = 56;  // int? | Limit results of facet (optional)  (default to 10)
+
+            try
+            {
+                // Get statistics about files, grouped by metadata
+                ByMetadataFacet result = apiInstance.StatisticsByMetadata(q, fq, dateAttr, sort, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StatisticsApi.StatisticsByMetadata: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **string**| Solr query | [optional] 
+ **fq** | [**List&lt;string&gt;**](string.md)| Solr filter query  Multiple query can be separated by &#x60;|&#x60;. | [optional] 
+ **dateAttr** | **string**| Type of date to facet on | [optional] 
+ **sort** | **string**| Sort results of facet | [optional] [default to count]
+ **limit** | **int?**| Limit results of facet | [optional] [default to 10]
+
+### Return type
+
+[**ByMetadataFacet**](ByMetadataFacet.md)
 
 ### Authorization
 
@@ -1196,6 +1284,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StorageFacet**](StorageFacet.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="statisticstaskbymetadata"></a>
+# **StatisticsTaskByMetadata**
+> ByTaskMetadataFacet StatisticsTaskByMetadata (string q = null, List<string> fq = null, string sort = null, int? limit = null)
+
+Get statistics about tasks executions, grouped by metadata
+
+**API Key Scope**: statistics / task_by_metadata
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Nodeum.Sdk.Api;
+using Io.Nodeum.Sdk.Client;
+using Io.Nodeum.Sdk.Model;
+
+namespace Example
+{
+    public class StatisticsTaskByMetadataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost/api/v2";
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: BearerAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StatisticsApi(config);
+            var q = q_example;  // string | Solr query (optional) 
+            var fq = new List<string>(); // List<string> | Solr filter query  Multiple query can be separated by `|`. (optional) 
+            var sort = sort_example;  // string | Sort results of facet on task (optional)  (default to count)
+            var limit = 56;  // int? | Limit results of facet (optional)  (default to 10)
+
+            try
+            {
+                // Get statistics about tasks executions, grouped by metadata
+                ByTaskMetadataFacet result = apiInstance.StatisticsTaskByMetadata(q, fq, sort, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StatisticsApi.StatisticsTaskByMetadata: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **string**| Solr query | [optional] 
+ **fq** | [**List&lt;string&gt;**](string.md)| Solr filter query  Multiple query can be separated by &#x60;|&#x60;. | [optional] 
+ **sort** | **string**| Sort results of facet on task | [optional] [default to count]
+ **limit** | **int?**| Limit results of facet | [optional] [default to 10]
+
+### Return type
+
+[**ByTaskMetadataFacet**](ByTaskMetadataFacet.md)
 
 ### Authorization
 

@@ -35,11 +35,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="ByUserOwnerFacet" /> class.
         /// </summary>
         /// <param name="userOwnerIdL">userOwnerIdL.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public ByUserOwnerFacet(ByDateFacetBuckets userOwnerIdL = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public ByUserOwnerFacet(ByDateFacetBuckets userOwnerIdL = default(ByDateFacetBuckets)) : base()
         {
             this.UserOwnerIdL = userOwnerIdL;
         }

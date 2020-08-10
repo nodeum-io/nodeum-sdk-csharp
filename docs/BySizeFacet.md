@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
-**FilesCount** | **int** |  | [optional] 
-**FileSizeSum** | **int** |  | [optional] 
-**Cost** | **decimal** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
+**FilesCount** | **int** |  | [optional] [readonly] 
+**FileSizeSum** | **int** |  | [optional] [readonly] 
+**Cost** | **decimal** |  | [optional] [readonly] 
 **Less100Kb** | [**ByDateFacet**](ByDateFacet.md) |  | [optional] 
 **Less1Mb** | [**ByDateFacet**](ByDateFacet.md) |  | [optional] 
 **Less10Mb** | [**ByDateFacet**](ByDateFacet.md) |  | [optional] 

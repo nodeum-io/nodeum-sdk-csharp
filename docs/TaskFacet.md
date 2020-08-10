@@ -3,12 +3,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ToProcessSizeSum** | **int** |  | [optional] 
-**ProcessedSizeSum** | **int** |  | [optional] 
-**ToProcessFilesSum** | **int** |  | [optional] 
-**ProcessedFilesSum** | **int** |  | [optional] 
-**FinalizedFilesSum** | **int** |  | [optional] 
-**BandwidthAvg** | **int** |  | [optional] 
+**ToProcessSizeSum** | **int** |  | [optional] [readonly] 
+**ProcessedSizeSum** | **int** |  | [optional] [readonly] 
+**ToProcessFilesSum** | **int** |  | [optional] [readonly] 
+**ProcessedFilesSum** | **int** |  | [optional] [readonly] 
+**FinalizedFilesSum** | **int** |  | [optional] [readonly] 
+**BandwidthAvg** | **int** |  | [optional] [readonly] 
+**BandwidthCount** | **int** |  | [optional] [readonly] 
+**TasksCount** | **int** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

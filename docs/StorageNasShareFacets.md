@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
 **NasTypeI** | [**ByTypeFacetBuckets**](ByTypeFacetBuckets.md) |  | [optional] 
 **PoolTypeI** | [**ByTypeFacetBuckets**](ByTypeFacetBuckets.md) |  | [optional] 
 

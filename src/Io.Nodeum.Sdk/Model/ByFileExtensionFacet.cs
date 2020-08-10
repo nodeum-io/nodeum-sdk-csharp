@@ -35,11 +35,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="ByFileExtensionFacet" /> class.
         /// </summary>
         /// <param name="fileExtensionS">fileExtensionS.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public ByFileExtensionFacet(ByDateFacetBuckets fileExtensionS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public ByFileExtensionFacet(ByDateFacetBuckets fileExtensionS = default(ByDateFacetBuckets)) : base()
         {
             this.FileExtensionS = fileExtensionS;
         }

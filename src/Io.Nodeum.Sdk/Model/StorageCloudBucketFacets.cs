@@ -34,12 +34,10 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StorageCloudBucketFacets" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
         /// <param name="cloudConnectorTypeI">cloudConnectorTypeI.</param>
         /// <param name="poolTypeI">poolTypeI.</param>
-        public StorageCloudBucketFacets(int count = default(int), ByTypeFacetBuckets cloudConnectorTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
+        public StorageCloudBucketFacets(ByTypeFacetBuckets cloudConnectorTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
         {
-            this.Count = count;
             this.CloudConnectorTypeI = cloudConnectorTypeI;
             this.PoolTypeI = poolTypeI;
         }
@@ -48,7 +46,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets CloudConnectorTypeI

@@ -34,15 +34,13 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StorageFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
         /// <param name="container">container.</param>
         /// <param name="nasShare">nasShare.</param>
         /// <param name="cloudBucket">cloudBucket.</param>
         /// <param name="tape">tape.</param>
         /// <param name="pool">pool.</param>
-        public StorageFacet(int count = default(int), DefaultFacet container = default(DefaultFacet), StorageNasShareFacets nasShare = default(StorageNasShareFacets), StorageCloudBucketFacets cloudBucket = default(StorageCloudBucketFacets), StorageTapeFacets tape = default(StorageTapeFacets), StoragePoolFacets pool = default(StoragePoolFacets))
+        public StorageFacet(DefaultFacet container = default(DefaultFacet), StorageNasShareFacets nasShare = default(StorageNasShareFacets), StorageCloudBucketFacets cloudBucket = default(StorageCloudBucketFacets), StorageTapeFacets tape = default(StorageTapeFacets), StoragePoolFacets pool = default(StoragePoolFacets))
         {
-            this.Count = count;
             this.Container = container;
             this.NasShare = nasShare;
             this.CloudBucket = cloudBucket;
@@ -54,7 +52,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets Container

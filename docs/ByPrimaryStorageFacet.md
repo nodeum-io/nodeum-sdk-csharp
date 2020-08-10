@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
-**FilesCount** | **int** |  | [optional] 
-**FileSizeSum** | **int** |  | [optional] 
-**Cost** | **decimal** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
+**FilesCount** | **int** |  | [optional] [readonly] 
+**FileSizeSum** | **int** |  | [optional] [readonly] 
+**Cost** | **decimal** |  | [optional] [readonly] 
 **OnPrimaryContainer** | [**ByPrimaryTypeFacet**](ByPrimaryTypeFacet.md) |  | [optional] 
 **OnPrimaryNas** | [**ByPrimaryTypeFacet**](ByPrimaryTypeFacet.md) |  | [optional] 
 **OnPrimaryPublicCloud** | [**ByPrimaryTypeFacet**](ByPrimaryTypeFacet.md) |  | [optional] 

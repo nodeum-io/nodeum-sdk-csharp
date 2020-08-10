@@ -83,7 +83,13 @@ namespace Io.Nodeum.Sdk.Model
             /// Enum Openstackswift for value: openstack_swift
             /// </summary>
             [EnumMember(Value = "openstack_swift")]
-            Openstackswift = 8
+            Openstackswift = 8,
+
+            /// <summary>
+            /// Enum Wasabi for value: wasabi
+            /// </summary>
+            [EnumMember(Value = "wasabi")]
+            Wasabi = 9
 
         }
 
@@ -102,7 +108,8 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="region">region.</param>
         /// <param name="accessKey">accessKey.</param>
         /// <param name="secretKey">secretKey.</param>
-        public CloudConnector(string name = default(string), string url = default(string), string urlProxy = default(string), ProviderEnum? provider = default(ProviderEnum?), string region = default(string), string accessKey = default(string), string secretKey = default(string))
+        /// <param name="options">S3FS mounting options, separated by comma.</param>
+        public CloudConnector(string name = default(string), string url = default(string), string urlProxy = default(string), ProviderEnum? provider = default(ProviderEnum?), string region = default(string), string accessKey = default(string), string secretKey = default(string), string options = default(string))
         {
             this.Name = name;
             this.Url = url;
@@ -111,6 +118,7 @@ namespace Io.Nodeum.Sdk.Model
             this.Region = region;
             this.AccessKey = accessKey;
             this.SecretKey = secretKey;
+            this.Options = options;
         }
         
         /// <summary>
@@ -156,6 +164,13 @@ namespace Io.Nodeum.Sdk.Model
         public string SecretKey { get; set; }
 
         /// <summary>
+        /// S3FS mounting options, separated by comma
+        /// </summary>
+        /// <value>S3FS mounting options, separated by comma</value>
+        [DataMember(Name="options", EmitDefaultValue=false)]
+        public string Options { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -171,6 +186,7 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  Region: ").Append(Region).Append("\n");
             sb.Append("  AccessKey: ").Append(AccessKey).Append("\n");
             sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -242,6 +258,11 @@ namespace Io.Nodeum.Sdk.Model
                     this.SecretKey == input.SecretKey ||
                     (this.SecretKey != null &&
                     this.SecretKey.Equals(input.SecretKey))
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
                 );
         }
 
@@ -268,6 +289,8 @@ namespace Io.Nodeum.Sdk.Model
                     hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
                 if (this.SecretKey != null)
                     hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
+                if (this.Options != null)
+                    hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

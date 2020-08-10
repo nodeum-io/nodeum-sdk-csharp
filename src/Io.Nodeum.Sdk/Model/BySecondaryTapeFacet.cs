@@ -37,11 +37,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="secTapeLibraryNameS">secTapeLibraryNameS.</param>
         /// <param name="secTapeBarcodeS">secTapeBarcodeS.</param>
         /// <param name="secPoolNameS">secPoolNameS.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public BySecondaryTapeFacet(ByDateFacetBuckets secTapeLibraryNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secTapeBarcodeS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public BySecondaryTapeFacet(ByDateFacetBuckets secTapeLibraryNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secTapeBarcodeS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets)) : base()
         {
             this.SecTapeLibraryNameS = secTapeLibraryNameS;
             this.SecTapeBarcodeS = secTapeBarcodeS;

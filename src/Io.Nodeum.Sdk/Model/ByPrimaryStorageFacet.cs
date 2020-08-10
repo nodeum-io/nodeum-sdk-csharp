@@ -34,20 +34,12 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ByPrimaryStorageFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
         /// <param name="onPrimaryContainer">onPrimaryContainer.</param>
         /// <param name="onPrimaryNas">onPrimaryNas.</param>
         /// <param name="onPrimaryPublicCloud">onPrimaryPublicCloud.</param>
         /// <param name="onPrimaryObjectCloud">onPrimaryObjectCloud.</param>
-        public ByPrimaryStorageFacet(int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), ByPrimaryTypeFacet onPrimaryContainer = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryNas = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryPublicCloud = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryObjectCloud = default(ByPrimaryTypeFacet))
+        public ByPrimaryStorageFacet(ByPrimaryTypeFacet onPrimaryContainer = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryNas = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryPublicCloud = default(ByPrimaryTypeFacet), ByPrimaryTypeFacet onPrimaryObjectCloud = default(ByPrimaryTypeFacet))
         {
-            this.Count = count;
-            this.FilesCount = filesCount;
-            this.FileSizeSum = fileSizeSum;
-            this.Cost = cost;
             this.OnPrimaryContainer = onPrimaryContainer;
             this.OnPrimaryNas = onPrimaryNas;
             this.OnPrimaryPublicCloud = onPrimaryPublicCloud;
@@ -58,25 +50,25 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets FilesCount
         /// </summary>
         [DataMember(Name="files_count", EmitDefaultValue=false)]
-        public int FilesCount { get; set; }
+        public int FilesCount { get; private set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
-        public int FileSizeSum { get; set; }
+        public int FileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
         [DataMember(Name="cost", EmitDefaultValue=false)]
-        public decimal Cost { get; set; }
+        public decimal Cost { get; private set; }
 
         /// <summary>
         /// Gets or Sets OnPrimaryContainer

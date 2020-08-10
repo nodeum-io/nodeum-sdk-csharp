@@ -34,12 +34,10 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StorageNasShareFacets" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
         /// <param name="nasTypeI">nasTypeI.</param>
         /// <param name="poolTypeI">poolTypeI.</param>
-        public StorageNasShareFacets(int count = default(int), ByTypeFacetBuckets nasTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
+        public StorageNasShareFacets(ByTypeFacetBuckets nasTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
         {
-            this.Count = count;
             this.NasTypeI = nasTypeI;
             this.PoolTypeI = poolTypeI;
         }
@@ -48,7 +46,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets NasTypeI

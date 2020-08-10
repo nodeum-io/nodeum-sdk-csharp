@@ -37,11 +37,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="secCloudConnectorNameS">secCloudConnectorNameS.</param>
         /// <param name="secCloudBucketNameS">secCloudBucketNameS.</param>
         /// <param name="secPoolNameS">secPoolNameS.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public BySecondaryCloudFacet(ByDateFacetBuckets secCloudConnectorNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secCloudBucketNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public BySecondaryCloudFacet(ByDateFacetBuckets secCloudConnectorNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secCloudBucketNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets)) : base()
         {
             this.SecCloudConnectorNameS = secCloudConnectorNameS;
             this.SecCloudBucketNameS = secCloudBucketNameS;

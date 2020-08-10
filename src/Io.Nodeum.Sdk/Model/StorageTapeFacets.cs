@@ -34,13 +34,11 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StorageTapeFacets" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
         /// <param name="tapeTypeI">tapeTypeI.</param>
         /// <param name="tapeLibraryTypeI">tapeLibraryTypeI.</param>
         /// <param name="poolTypeI">poolTypeI.</param>
-        public StorageTapeFacets(int count = default(int), ByTypeFacetBuckets tapeTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets tapeLibraryTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
+        public StorageTapeFacets(ByTypeFacetBuckets tapeTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets tapeLibraryTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets))
         {
-            this.Count = count;
             this.TapeTypeI = tapeTypeI;
             this.TapeLibraryTypeI = tapeLibraryTypeI;
             this.PoolTypeI = poolTypeI;
@@ -50,7 +48,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets TapeTypeI

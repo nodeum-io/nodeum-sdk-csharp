@@ -34,33 +34,28 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemGroup" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="gid">gid.</param>
-        /// <param name="users">users.</param>
-        public SystemGroup(string name = default(string), int gid = default(int), List<string> users = default(List<string>))
+        [JsonConstructorAttribute]
+        public SystemGroup()
         {
-            this.Name = name;
-            this.Gid = gid;
-            this.Users = users;
         }
         
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets or Sets Gid
         /// </summary>
         [DataMember(Name="gid", EmitDefaultValue=false)]
-        public int Gid { get; set; }
+        public int Gid { get; private set; }
 
         /// <summary>
         /// Gets or Sets Users
         /// </summary>
         [DataMember(Name="users", EmitDefaultValue=false)]
-        public List<string> Users { get; set; }
+        public List<string> Users { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object

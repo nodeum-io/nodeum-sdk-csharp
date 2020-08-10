@@ -31,7 +31,7 @@ namespace Io.Nodeum.Sdk.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.86.0";
+        public const string Version = "1.87.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -96,7 +96,7 @@ namespace Io.Nodeum.Sdk.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/1.86.0/csharp";
+            UserAgent = "OpenAPI-Generator/1.87.0/csharp";
             BasePath = "http://localhost/api/v2";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -351,7 +351,7 @@ namespace Io.Nodeum.Sdk.Client
             String report = "C# SDK (Io.Nodeum.Sdk) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: 2.1.0\n";
-            report += "    SDK Package Version: 1.86.0\n";
+            report += "    SDK Package Version: 1.87.0\n";
 
             return report;
         }

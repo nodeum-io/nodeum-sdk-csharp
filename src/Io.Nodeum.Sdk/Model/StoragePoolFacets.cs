@@ -34,12 +34,10 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StoragePoolFacets" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
         /// <param name="poolTypeI">poolTypeI.</param>
         /// <param name="poolContentI">poolContentI.</param>
-        public StoragePoolFacets(int count = default(int), ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolContentI = default(ByTypeFacetBuckets))
+        public StoragePoolFacets(ByTypeFacetBuckets poolTypeI = default(ByTypeFacetBuckets), ByTypeFacetBuckets poolContentI = default(ByTypeFacetBuckets))
         {
-            this.Count = count;
             this.PoolTypeI = poolTypeI;
             this.PoolContentI = poolContentI;
         }
@@ -48,7 +46,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets PoolTypeI

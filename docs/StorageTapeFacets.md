@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
 **TapeTypeI** | [**ByTypeFacetBuckets**](ByTypeFacetBuckets.md) |  | [optional] 
 **TapeLibraryTypeI** | [**ByTypeFacetBuckets**](ByTypeFacetBuckets.md) |  | [optional] 
 **PoolTypeI** | [**ByTypeFacetBuckets**](ByTypeFacetBuckets.md) |  | [optional] 

@@ -37,11 +37,7 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="secNasNameS">secNasNameS.</param>
         /// <param name="secNasShareNameS">secNasShareNameS.</param>
         /// <param name="secPoolNameS">secPoolNameS.</param>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
-        public BySecondaryNasFacet(ByDateFacetBuckets secNasNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secNasShareNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets), int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal)) : base()
+        public BySecondaryNasFacet(ByDateFacetBuckets secNasNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secNasShareNameS = default(ByDateFacetBuckets), ByDateFacetBuckets secPoolNameS = default(ByDateFacetBuckets)) : base()
         {
             this.SecNasNameS = secNasNameS;
             this.SecNasShareNameS = secNasShareNameS;

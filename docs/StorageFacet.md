@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
 **Container** | [**DefaultFacet**](DefaultFacet.md) |  | [optional] 
 **NasShare** | [**StorageNasShareFacets**](StorageNasShareFacets.md) |  | [optional] 
 **CloudBucket** | [**StorageCloudBucketFacets**](StorageCloudBucketFacets.md) |  | [optional] 

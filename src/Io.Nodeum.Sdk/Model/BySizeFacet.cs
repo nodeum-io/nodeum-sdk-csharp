@@ -34,10 +34,6 @@ namespace Io.Nodeum.Sdk.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BySizeFacet" /> class.
         /// </summary>
-        /// <param name="count">count.</param>
-        /// <param name="filesCount">filesCount.</param>
-        /// <param name="fileSizeSum">fileSizeSum.</param>
-        /// <param name="cost">cost.</param>
         /// <param name="less100Kb">less100Kb.</param>
         /// <param name="less1Mb">less1Mb.</param>
         /// <param name="less10Mb">less10Mb.</param>
@@ -46,12 +42,8 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="less10Gb">less10Gb.</param>
         /// <param name="less100Gb">less100Gb.</param>
         /// <param name="more100Gb">more100Gb.</param>
-        public BySizeFacet(int count = default(int), int filesCount = default(int), int fileSizeSum = default(int), decimal cost = default(decimal), ByDateFacet less100Kb = default(ByDateFacet), ByDateFacet less1Mb = default(ByDateFacet), ByDateFacet less10Mb = default(ByDateFacet), ByDateFacet less100Mb = default(ByDateFacet), ByDateFacet less1Gb = default(ByDateFacet), ByDateFacet less10Gb = default(ByDateFacet), ByDateFacet less100Gb = default(ByDateFacet), ByDateFacet more100Gb = default(ByDateFacet))
+        public BySizeFacet(ByDateFacet less100Kb = default(ByDateFacet), ByDateFacet less1Mb = default(ByDateFacet), ByDateFacet less10Mb = default(ByDateFacet), ByDateFacet less100Mb = default(ByDateFacet), ByDateFacet less1Gb = default(ByDateFacet), ByDateFacet less10Gb = default(ByDateFacet), ByDateFacet less100Gb = default(ByDateFacet), ByDateFacet more100Gb = default(ByDateFacet))
         {
-            this.Count = count;
-            this.FilesCount = filesCount;
-            this.FileSizeSum = fileSizeSum;
-            this.Cost = cost;
             this.Less100Kb = less100Kb;
             this.Less1Mb = less1Mb;
             this.Less10Mb = less10Mb;
@@ -66,25 +58,25 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets FilesCount
         /// </summary>
         [DataMember(Name="files_count", EmitDefaultValue=false)]
-        public int FilesCount { get; set; }
+        public int FilesCount { get; private set; }
 
         /// <summary>
         /// Gets or Sets FileSizeSum
         /// </summary>
         [DataMember(Name="file_size_sum", EmitDefaultValue=false)]
-        public int FileSizeSum { get; set; }
+        public int FileSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets Cost
         /// </summary>
         [DataMember(Name="cost", EmitDefaultValue=false)]
-        public decimal Cost { get; set; }
+        public decimal Cost { get; private set; }
 
         /// <summary>
         /// Gets or Sets Less100Kb

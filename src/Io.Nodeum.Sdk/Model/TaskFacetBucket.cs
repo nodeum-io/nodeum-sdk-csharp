@@ -35,23 +35,9 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="TaskFacetBucket" /> class.
         /// </summary>
         /// <param name="val">val.</param>
-        /// <param name="count">count.</param>
-        /// <param name="toProcessSizeSum">toProcessSizeSum.</param>
-        /// <param name="processedSizeSum">processedSizeSum.</param>
-        /// <param name="toProcessFilesSum">toProcessFilesSum.</param>
-        /// <param name="processedFilesSum">processedFilesSum.</param>
-        /// <param name="finalizedFilesSum">finalizedFilesSum.</param>
-        /// <param name="bandwidthAvg">bandwidthAvg.</param>
-        public TaskFacetBucket(Object val = default(Object), int count = default(int), int toProcessSizeSum = default(int), int processedSizeSum = default(int), int toProcessFilesSum = default(int), int processedFilesSum = default(int), int finalizedFilesSum = default(int), int bandwidthAvg = default(int))
+        public TaskFacetBucket(Object val = default(Object))
         {
             this.Val = val;
-            this.Count = count;
-            this.ToProcessSizeSum = toProcessSizeSum;
-            this.ProcessedSizeSum = processedSizeSum;
-            this.ToProcessFilesSum = toProcessFilesSum;
-            this.ProcessedFilesSum = processedFilesSum;
-            this.FinalizedFilesSum = finalizedFilesSum;
-            this.BandwidthAvg = bandwidthAvg;
         }
         
         /// <summary>
@@ -64,43 +50,55 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Gets or Sets ToProcessSizeSum
         /// </summary>
         [DataMember(Name="to_process_size_sum", EmitDefaultValue=false)]
-        public int ToProcessSizeSum { get; set; }
+        public int ToProcessSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets ProcessedSizeSum
         /// </summary>
         [DataMember(Name="processed_size_sum", EmitDefaultValue=false)]
-        public int ProcessedSizeSum { get; set; }
+        public int ProcessedSizeSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets ToProcessFilesSum
         /// </summary>
         [DataMember(Name="to_process_files_sum", EmitDefaultValue=false)]
-        public int ToProcessFilesSum { get; set; }
+        public int ToProcessFilesSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets ProcessedFilesSum
         /// </summary>
         [DataMember(Name="processed_files_sum", EmitDefaultValue=false)]
-        public int ProcessedFilesSum { get; set; }
+        public int ProcessedFilesSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets FinalizedFilesSum
         /// </summary>
         [DataMember(Name="finalized_files_sum", EmitDefaultValue=false)]
-        public int FinalizedFilesSum { get; set; }
+        public int FinalizedFilesSum { get; private set; }
 
         /// <summary>
         /// Gets or Sets BandwidthAvg
         /// </summary>
         [DataMember(Name="bandwidth_avg", EmitDefaultValue=false)]
-        public int BandwidthAvg { get; set; }
+        public int BandwidthAvg { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets BandwidthCount
+        /// </summary>
+        [DataMember(Name="bandwidth_count", EmitDefaultValue=false)]
+        public int BandwidthCount { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets TasksCount
+        /// </summary>
+        [DataMember(Name="tasks_count", EmitDefaultValue=false)]
+        public int TasksCount { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,6 +116,8 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  ProcessedFilesSum: ").Append(ProcessedFilesSum).Append("\n");
             sb.Append("  FinalizedFilesSum: ").Append(FinalizedFilesSum).Append("\n");
             sb.Append("  BandwidthAvg: ").Append(BandwidthAvg).Append("\n");
+            sb.Append("  BandwidthCount: ").Append(BandwidthCount).Append("\n");
+            sb.Append("  TasksCount: ").Append(TasksCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +184,14 @@ namespace Io.Nodeum.Sdk.Model
                 (
                     this.BandwidthAvg == input.BandwidthAvg ||
                     this.BandwidthAvg.Equals(input.BandwidthAvg)
+                ) && 
+                (
+                    this.BandwidthCount == input.BandwidthCount ||
+                    this.BandwidthCount.Equals(input.BandwidthCount)
+                ) && 
+                (
+                    this.TasksCount == input.TasksCount ||
+                    this.TasksCount.Equals(input.TasksCount)
                 );
         }
 
@@ -205,6 +213,8 @@ namespace Io.Nodeum.Sdk.Model
                 hashCode = hashCode * 59 + this.ProcessedFilesSum.GetHashCode();
                 hashCode = hashCode * 59 + this.FinalizedFilesSum.GetHashCode();
                 hashCode = hashCode * 59 + this.BandwidthAvg.GetHashCode();
+                hashCode = hashCode * 59 + this.BandwidthCount.GetHashCode();
+                hashCode = hashCode * 59 + this.TasksCount.GetHashCode();
                 return hashCode;
             }
         }

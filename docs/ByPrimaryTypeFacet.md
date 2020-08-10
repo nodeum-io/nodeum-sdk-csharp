@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
-**FilesCount** | **int** |  | [optional] 
-**FileSizeSum** | **int** |  | [optional] 
-**Cost** | **decimal** |  | [optional] 
+**Count** | **int** |  | [optional] [readonly] 
+**FilesCount** | **int** |  | [optional] [readonly] 
+**FileSizeSum** | **int** |  | [optional] [readonly] 
+**Cost** | **decimal** |  | [optional] [readonly] 
 **InCache** | [**FileFacet**](FileFacet.md) |  | [optional] 
 **Less1Week** | [**FileFacet**](FileFacet.md) |  | [optional] 
 **Less1Month** | [**FileFacet**](FileFacet.md) |  | [optional] 

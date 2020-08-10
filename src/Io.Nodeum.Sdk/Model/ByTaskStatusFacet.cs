@@ -35,14 +35,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="ByTaskStatusFacet" /> class.
         /// </summary>
         /// <param name="status">status.</param>
-        /// <param name="count">count.</param>
-        /// <param name="toProcessSizeSum">toProcessSizeSum.</param>
-        /// <param name="processedSizeSum">processedSizeSum.</param>
-        /// <param name="toProcessFilesSum">toProcessFilesSum.</param>
-        /// <param name="processedFilesSum">processedFilesSum.</param>
-        /// <param name="finalizedFilesSum">finalizedFilesSum.</param>
-        /// <param name="bandwidthAvg">bandwidthAvg.</param>
-        public ByTaskStatusFacet(TaskFacetBuckets status = default(TaskFacetBuckets), int count = default(int), int toProcessSizeSum = default(int), int processedSizeSum = default(int), int toProcessFilesSum = default(int), int processedFilesSum = default(int), int finalizedFilesSum = default(int), int bandwidthAvg = default(int)) : base()
+        public ByTaskStatusFacet(TaskFacetBuckets status = default(TaskFacetBuckets)) : base()
         {
             this.Status = status;
         }

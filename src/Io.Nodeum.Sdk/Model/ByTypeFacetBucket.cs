@@ -35,11 +35,9 @@ namespace Io.Nodeum.Sdk.Model
         /// Initializes a new instance of the <see cref="ByTypeFacetBucket" /> class.
         /// </summary>
         /// <param name="val">val.</param>
-        /// <param name="count">count.</param>
-        public ByTypeFacetBucket(Object val = default(Object), int count = default(int))
+        public ByTypeFacetBucket(Object val = default(Object))
         {
             this.Val = val;
-            this.Count = count;
         }
         
         /// <summary>
@@ -52,7 +50,7 @@ namespace Io.Nodeum.Sdk.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public int Count { get; set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Returns the string presentation of the object
