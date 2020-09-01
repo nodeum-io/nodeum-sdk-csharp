@@ -146,10 +146,16 @@ namespace Io.Nodeum.Sdk.Model
             Overwrite = 18,
 
             /// <summary>
+            /// Enum Softerase for value: soft_erase
+            /// </summary>
+            [EnumMember(Value = "soft_erase")]
+            Softerase = 19,
+
+            /// <summary>
             /// Enum Tasktemplate for value: task_template
             /// </summary>
             [EnumMember(Value = "task_template")]
-            Tasktemplate = 19
+            Tasktemplate = 20
 
         }
 

@@ -28,6 +28,27 @@ namespace Io.Nodeum.Sdk.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: tapes / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns></returns>
+        void DestroyTape (string tapeId);
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: tapes / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DestroyTapeWithHttpInfo (string tapeId);
+        /// <summary>
         /// List all tape statistics.
         /// </summary>
         /// <remarks>
@@ -485,6 +506,27 @@ namespace Io.Nodeum.Sdk.Api
     public interface ITapesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: tapes / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DestroyTapeAsync (string tapeId);
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan.
+        /// </summary>
+        /// <remarks>
+        /// **API Key Scope**: tapes / destroy
+        /// </remarks>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DestroyTapeAsyncWithHttpInfo (string tapeId);
         /// <summary>
         /// List all tape statistics.
         /// </summary>
@@ -1052,6 +1094,139 @@ namespace Io.Nodeum.Sdk.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan. **API Key Scope**: tapes / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns></returns>
+        public void DestroyTape (string tapeId)
+        {
+             DestroyTapeWithHttpInfo(tapeId);
+        }
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan. **API Key Scope**: tapes / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Io.Nodeum.Sdk.Client.ApiResponse<Object> DestroyTapeWithHttpInfo (string tapeId)
+        {
+            // verify the required parameter 'tapeId' is set
+            if (tapeId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'tapeId' when calling TapesApi->DestroyTape");
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+
+            var localVarContentType = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Io.Nodeum.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (tapeId != null)
+                localVarRequestOptions.PathParameters.Add("tape_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(tapeId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<Object>("/tapes/{tape_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DestroyTape", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan. **API Key Scope**: tapes / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DestroyTapeAsync (string tapeId)
+        {
+             await DestroyTapeAsyncWithHttpInfo(tapeId);
+
+        }
+
+        /// <summary>
+        /// Destroys a specific tape. Only when it&#39;s an orphan. **API Key Scope**: tapes / destroy
+        /// </summary>
+        /// <exception cref="Io.Nodeum.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="tapeId">Numeric ID, or barcode of tape.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Io.Nodeum.Sdk.Client.ApiResponse<Object>> DestroyTapeAsyncWithHttpInfo (string tapeId)
+        {
+            // verify the required parameter 'tapeId' is set
+            if (tapeId == null)
+                throw new Io.Nodeum.Sdk.Client.ApiException(400, "Missing required parameter 'tapeId' when calling TapesApi->DestroyTape");
+
+
+            Io.Nodeum.Sdk.Client.RequestOptions localVarRequestOptions = new Io.Nodeum.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+            };
+            
+            foreach (var _contentType in _contentTypes)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", _contentType);
+            
+            foreach (var _accept in _accepts)
+                localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
+            
+            if (tapeId != null)
+                localVarRequestOptions.PathParameters.Add("tape_id", Io.Nodeum.Sdk.Client.ClientUtils.ParameterToString(tapeId)); // path parameter
+
+            // authentication (BasicAuth) required
+            // http basic authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + Io.Nodeum.Sdk.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+            // authentication (BearerAuth) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/tapes/{tape_id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DestroyTape", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

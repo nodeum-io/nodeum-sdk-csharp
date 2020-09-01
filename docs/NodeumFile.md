@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **AccessDate** | **string** |  | [optional] [readonly] 
 **Uid** | **int** |  | [optional] [readonly] 
 **Gid** | **int** |  | [optional] [readonly] 
+**InCache** | **int** |  | [optional] [readonly] 
+**Offline** | **int** |  | [optional] [readonly] 
+**Extern** | **int** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

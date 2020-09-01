@@ -41,7 +41,8 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="comment">comment.</param>
         /// <param name="type">type.</param>
         /// <param name="content">content.</param>
-        public PoolUp(List<int> tapeIds = default(List<int>), List<int> nasShareIds = default(List<int>), List<int> cloudBucketIds = default(List<int>), string name = default(string), string comment = default(string), TypeEnum? type = default(TypeEnum?), ContentEnum? content = default(ContentEnum?)) : base()
+        /// <param name="storageId">For pool of tapes, used to link to a tape library id.</param>
+        public PoolUp(List<int> tapeIds = default(List<int>), List<int> nasShareIds = default(List<int>), List<int> cloudBucketIds = default(List<int>), string name = default(string), string comment = default(string), TypeEnum? type = default(TypeEnum?), ContentEnum? content = default(ContentEnum?), int storageId = default(int)) : base()
         {
             this.TapeIds = tapeIds;
             this.NasShareIds = nasShareIds;

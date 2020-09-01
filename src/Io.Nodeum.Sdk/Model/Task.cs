@@ -99,64 +99,70 @@ namespace Io.Nodeum.Sdk.Model
             Move = 2,
 
             /// <summary>
+            /// Enum Erase for value: erase
+            /// </summary>
+            [EnumMember(Value = "erase")]
+            Erase = 3,
+
+            /// <summary>
             /// Enum Scan for value: scan
             /// </summary>
             [EnumMember(Value = "scan")]
-            Scan = 3,
+            Scan = 4,
 
             /// <summary>
             /// Enum Rehydratation for value: rehydratation
             /// </summary>
             [EnumMember(Value = "rehydratation")]
-            Rehydratation = 4,
+            Rehydratation = 5,
 
             /// <summary>
             /// Enum Format for value: format
             /// </summary>
             [EnumMember(Value = "format")]
-            Format = 5,
+            Format = 6,
 
             /// <summary>
             /// Enum Checkconsistency for value: check_consistency
             /// </summary>
             [EnumMember(Value = "check_consistency")]
-            Checkconsistency = 6,
+            Checkconsistency = 7,
 
             /// <summary>
             /// Enum Duplication for value: duplication
             /// </summary>
             [EnumMember(Value = "duplication")]
-            Duplication = 7,
+            Duplication = 8,
 
             /// <summary>
             /// Enum Cachecleaning for value: cache_cleaning
             /// </summary>
             [EnumMember(Value = "cache_cleaning")]
-            Cachecleaning = 8,
+            Cachecleaning = 9,
 
             /// <summary>
             /// Enum Ejection for value: ejection
             /// </summary>
             [EnumMember(Value = "ejection")]
-            Ejection = 9,
+            Ejection = 10,
 
             /// <summary>
             /// Enum Getindex for value: get_index
             /// </summary>
             [EnumMember(Value = "get_index")]
-            Getindex = 10,
+            Getindex = 11,
 
             /// <summary>
             /// Enum Fullbackup for value: full_backup
             /// </summary>
             [EnumMember(Value = "full_backup")]
-            Fullbackup = 11,
+            Fullbackup = 12,
 
             /// <summary>
             /// Enum Incrementalbackup for value: incremental_backup
             /// </summary>
             [EnumMember(Value = "incremental_backup")]
-            Incrementalbackup = 12
+            Incrementalbackup = 13
 
         }
 

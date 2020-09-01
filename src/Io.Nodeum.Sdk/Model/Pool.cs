@@ -118,12 +118,14 @@ namespace Io.Nodeum.Sdk.Model
         /// <param name="comment">comment.</param>
         /// <param name="type">type.</param>
         /// <param name="content">content.</param>
-        public Pool(string name = default(string), string comment = default(string), TypeEnum? type = default(TypeEnum?), ContentEnum? content = default(ContentEnum?))
+        /// <param name="storageId">For pool of tapes, used to link to a tape library id.</param>
+        public Pool(string name = default(string), string comment = default(string), TypeEnum? type = default(TypeEnum?), ContentEnum? content = default(ContentEnum?), int storageId = default(int))
         {
             this.Name = name;
             this.Comment = comment;
             this.Type = type;
             this.Content = content;
+            this.StorageId = storageId;
         }
         
         /// <summary>
@@ -151,6 +153,13 @@ namespace Io.Nodeum.Sdk.Model
         public int PrimaryId { get; private set; }
 
         /// <summary>
+        /// For pool of tapes, used to link to a tape library id
+        /// </summary>
+        /// <value>For pool of tapes, used to link to a tape library id</value>
+        [DataMember(Name="storage_id", EmitDefaultValue=false)]
+        public int StorageId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -164,6 +173,7 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  PrimaryId: ").Append(PrimaryId).Append("\n");
+            sb.Append("  StorageId: ").Append(StorageId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -223,6 +233,10 @@ namespace Io.Nodeum.Sdk.Model
                 (
                     this.PrimaryId == input.PrimaryId ||
                     this.PrimaryId.Equals(input.PrimaryId)
+                ) && 
+                (
+                    this.StorageId == input.StorageId ||
+                    this.StorageId.Equals(input.StorageId)
                 );
         }
 
@@ -243,6 +257,7 @@ namespace Io.Nodeum.Sdk.Model
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 hashCode = hashCode * 59 + this.Content.GetHashCode();
                 hashCode = hashCode * 59 + this.PrimaryId.GetHashCode();
+                hashCode = hashCode * 59 + this.StorageId.GetHashCode();
                 return hashCode;
             }
         }

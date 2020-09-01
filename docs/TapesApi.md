@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DestroyTape**](TapesApi.md#destroytape) | **DELETE** /tapes/{tape_id} | Destroys a specific tape. Only when it&#39;s an orphan.
 [**IndexTapeStats**](TapesApi.md#indextapestats) | **GET** /tape_stats | List all tape statistics.
 [**IndexTapes**](TapesApi.md#indextapes) | **GET** /tapes | Lists all tapes.
 [**IndexTapesByPool**](TapesApi.md#indextapesbypool) | **GET** /pools/{pool_id}/tapes | Lists all tapes.
@@ -18,6 +19,83 @@ Method | HTTP request | Description
 [**ShowTapeStatByPool**](TapesApi.md#showtapestatbypool) | **GET** /pools/{pool_id}/tapes/{tape_id}/tape_stat | Display statistic for a specific tape.
 [**ShowTapeStatByTapeLibrary**](TapesApi.md#showtapestatbytapelibrary) | **GET** /tape_libraries/{tape_library_id}/tapes/{tape_id}/tape_stat | Display statistic for a specific tape.
 
+
+<a name="destroytape"></a>
+# **DestroyTape**
+> void DestroyTape (string tapeId)
+
+Destroys a specific tape. Only when it's an orphan.
+
+**API Key Scope**: tapes / destroy
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Io.Nodeum.Sdk.Api;
+using Io.Nodeum.Sdk.Client;
+using Io.Nodeum.Sdk.Model;
+
+namespace Example
+{
+    public class DestroyTapeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost/api/v2";
+            // Configure HTTP basic authorization: BasicAuth
+            config.Username = "YOUR_USERNAME";
+            config.Password = "YOUR_PASSWORD";
+            // Configure API key authorization: BearerAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new TapesApi(config);
+            var tapeId = tapeId_example;  // string | Numeric ID, or barcode of tape.
+
+            try
+            {
+                // Destroys a specific tape. Only when it's an orphan.
+                apiInstance.DestroyTape(tapeId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TapesApi.DestroyTape: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tapeId** | **string**| Numeric ID, or barcode of tape. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Tape destroyed. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="indextapestats"></a>
 # **IndexTapeStats**

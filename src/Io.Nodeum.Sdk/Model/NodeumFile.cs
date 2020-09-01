@@ -131,6 +131,24 @@ namespace Io.Nodeum.Sdk.Model
         public int Gid { get; private set; }
 
         /// <summary>
+        /// Gets or Sets InCache
+        /// </summary>
+        [DataMember(Name="in_cache", EmitDefaultValue=false)]
+        public int InCache { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets Offline
+        /// </summary>
+        [DataMember(Name="offline", EmitDefaultValue=false)]
+        public int Offline { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets Extern
+        /// </summary>
+        [DataMember(Name="extern", EmitDefaultValue=false)]
+        public int Extern { get; private set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -150,6 +168,9 @@ namespace Io.Nodeum.Sdk.Model
             sb.Append("  AccessDate: ").Append(AccessDate).Append("\n");
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Gid: ").Append(Gid).Append("\n");
+            sb.Append("  InCache: ").Append(InCache).Append("\n");
+            sb.Append("  Offline: ").Append(Offline).Append("\n");
+            sb.Append("  Extern: ").Append(Extern).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +256,18 @@ namespace Io.Nodeum.Sdk.Model
                 (
                     this.Gid == input.Gid ||
                     this.Gid.Equals(input.Gid)
+                ) && 
+                (
+                    this.InCache == input.InCache ||
+                    this.InCache.Equals(input.InCache)
+                ) && 
+                (
+                    this.Offline == input.Offline ||
+                    this.Offline.Equals(input.Offline)
+                ) && 
+                (
+                    this.Extern == input.Extern ||
+                    this.Extern.Equals(input.Extern)
                 );
         }
 
@@ -263,6 +296,9 @@ namespace Io.Nodeum.Sdk.Model
                     hashCode = hashCode * 59 + this.AccessDate.GetHashCode();
                 hashCode = hashCode * 59 + this.Uid.GetHashCode();
                 hashCode = hashCode * 59 + this.Gid.GetHashCode();
+                hashCode = hashCode * 59 + this.InCache.GetHashCode();
+                hashCode = hashCode * 59 + this.Offline.GetHashCode();
+                hashCode = hashCode * 59 + this.Extern.GetHashCode();
                 return hashCode;
             }
         }
